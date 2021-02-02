@@ -38,7 +38,6 @@ class UserDetailActivity : AppCompatActivity() {
             supportActionBar?.title = user?.userName
 
             with(binding) {
-                tvUsername.text = user?.userName
                 tvName.text = user?.name
                 tvRepository.text = user?.repository
                 tvFollower.text = user?.followers
@@ -48,6 +47,7 @@ class UserDetailActivity : AppCompatActivity() {
 
                 Glide.with(root.context)
                     .load(user?.avatar)
+                    .circleCrop()
                     .into(imgUserAvatar)
             }
         }
