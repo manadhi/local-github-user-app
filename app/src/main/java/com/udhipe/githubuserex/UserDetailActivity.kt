@@ -18,6 +18,12 @@ class UserDetailActivity : AppCompatActivity() {
         showUserDetail()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // update
+        val pagerAdapter = FollowPagerAdapter(this, supportFragmentManager)
+        binding.viewPager.adapter = pagerAdapter
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
