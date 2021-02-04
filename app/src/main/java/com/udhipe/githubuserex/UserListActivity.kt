@@ -1,12 +1,14 @@
 package com.udhipe.githubuserex
 
+import android.app.SearchManager
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
@@ -27,12 +29,19 @@ class UserListActivity : AppCompatActivity() {
 
         binding.rvGithubUser.setHasFixedSize(true)
 
-        userViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(UserViewModel::class.java)
+        userViewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.NewInstanceFactory()
+        ).get(UserViewModel::class.java)
 
         setAdapter()
 
-        val keyword = "jaka"
-        userViewModel.setUserList(keyword)
+//        binding.edtSearch.setOnClickListener{
+//            val keyword = binding.edtSearch.text.toString()
+//            if (keyword.isEmpty()) return@setOnClickListener
+//
+//            userViewModel.setUserList(keyword)
+//        }
 
         userViewModel.getUserList(UserViewModel.USER_LIST)?.observe(this, {
             if (it != null) {
@@ -40,15 +49,33 @@ class UserListActivity : AppCompatActivity() {
             }
         })
 
-//        userList.addAll(getListUser())
-
-
-//        showList(userList)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.app_menu, menu)
+
+        // search
+        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val searchView = menu?.findItem(R.id.search)?.actionView as SearchView
+
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        searchView.queryHint = resources.getString(R.string.search_hint)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(keyword: String?): Boolean {
+                if (keyword != null && keyword.isNotEmpty()) {
+                    userViewModel.setUserList(keyword)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(keyword: String?): Boolean {
+                return false
+            }
+
+        })
+
+
         return true
     }
 
