@@ -45,9 +45,9 @@ class UserDetailActivity : AppCompatActivity() {
 
             with(binding) {
                 tvName.text = user?.name
-                tvRepository.text = user?.repository
-                tvFollower.text = user?.followers
-                tvFollowing.text = user?.following
+//                tvRepository.text = user?.repository
+//                tvFollower.text = user?.followers
+//                tvFollowing.text = user?.following
                 tvCompany.text = user?.company
                 tvLocation.text = user?.location
 

@@ -7,6 +7,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.udhipe.githubuserex.databinding.ActivityUserListBinding
@@ -15,7 +16,9 @@ import com.udhipe.githubuserex.databinding.ActivityUserListBinding
 class UserListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserListBinding
-    private val userList = ArrayList<User>()
+    private lateinit var userAdapter: UserAdapter
+
+    private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +27,23 @@ class UserListActivity : AppCompatActivity() {
 
         binding.rvGithubUser.setHasFixedSize(true)
 
-        userList.addAll(getListUser())
-        showList(userList)
+        userViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(UserViewModel::class.java)
+
+        setAdapter()
+
+        val keyword = "jaka"
+        userViewModel.setUserList(keyword)
+
+        userViewModel.getUserList(UserViewModel.USER_LIST)?.observe(this, {
+            if (it != null) {
+                userAdapter.setData(it)
+            }
+        })
+
+//        userList.addAll(getListUser())
+
+
+//        showList(userList)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -48,7 +66,7 @@ class UserListActivity : AppCompatActivity() {
         }
     }
 
-    private fun getListUser(): ArrayList<User> {
+/*    private fun getListUser(): ArrayList<User> {
         val listName = resources.getStringArray(R.array.name)
         val listUserName = resources.getStringArray(R.array.username)
         val listLocation = resources.getStringArray(R.array.location)
@@ -75,19 +93,35 @@ class UserListActivity : AppCompatActivity() {
         }
 
         return userList
-    }
+    }*/
 
+/*
     private fun showList(userList: ArrayList<User>) {
         val onItemCallBack = object : UserAdapter.OnItemClickCallback {
             override fun onItemClick(data: User) {
                 val intent = Intent(this@UserListActivity, UserDetailActivity::class.java)
-                intent.putExtra("data", data)
+//                intent.putExtra("data", data)
                 startActivity(intent)
             }
         }
 
         binding.rvGithubUser.layoutManager = LinearLayoutManager(this)
         val userAdapter = UserAdapter(userList, onItemCallBack)
+        binding.rvGithubUser.adapter = userAdapter
+    }
+*/
+
+    private fun setAdapter() {
+        val onItemCallBack = object : UserAdapter.OnItemClickCallback {
+            override fun onItemClick(data: User) {
+//                val intent = Intent(this@UserListActivity, UserDetailActivity::class.java)
+//                intent.putExtra("data", data)
+//                startActivity(intent)
+            }
+        }
+
+        binding.rvGithubUser.layoutManager = LinearLayoutManager(this)
+        userAdapter = UserAdapter(onItemCallBack)
         binding.rvGithubUser.adapter = userAdapter
     }
 

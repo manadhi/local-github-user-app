@@ -6,13 +6,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.udhipe.githubuserex.databinding.ItemGithubUserBinding
 
-class UserAdapter(private val listUser: ArrayList<User>,
-                  private var onItemClickCallBack: OnItemClickCallback
+class UserAdapter(
+    private var onItemClickCallBack: OnItemClickCallback
 ) :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
+    private var listUser = arrayListOf<User>()
+
     interface OnItemClickCallback {
         fun onItemClick(data: User)
+    }
+
+    fun setData(newListUser: ArrayList<User>) {
+        listUser.clear()
+        listUser.addAll(newListUser)
+        notifyDataSetChanged()
     }
 
     inner class UserViewHolder(private val binding: ItemGithubUserBinding) :

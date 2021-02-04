@@ -13,10 +13,13 @@ android {
         applicationId "com.udhipe.githubuserex"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", "\"https://api.github.com/\""
+        buildConfigField "String", "ACCESS_TOKEN", "\"2cd7015aacb75236454a1eb18ecd7b21f87554ca\""
     }
 
     buildTypes {
@@ -42,6 +45,15 @@ android {
 }
 
 dependencies {
+    def lifecycle_version = "2.2.0"
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    // Network
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.21'
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'

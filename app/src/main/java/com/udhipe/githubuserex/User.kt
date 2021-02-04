@@ -1,16 +1,14 @@
 package com.udhipe.githubuserex
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import com.google.gson.annotations.SerializedName
 
-@Parcelize
 data class User(
-    var userName: String,
-    var name: String,
-    var location: String,
-    var repository: String,
-    var company: String,
-    var followers: String,
-    var following: String,
-    var avatar: Int
-) : Parcelable
+    @SerializedName("login") val userName: String,
+    val name: String,
+    val location: String,
+    @SerializedName("public_repos") val repository: Int,
+    val company: String,
+    val followers: Int,
+    val following: Int,
+    @SerializedName("avatar_url") val avatar: String
+)
