@@ -22,6 +22,10 @@ class UserListActivity : AppCompatActivity() {
 
     private lateinit var userViewModel: UserViewModel
 
+    companion object {
+        const val USERNAME = "userName"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUserListBinding.inflate(layoutInflater)
@@ -35,13 +39,6 @@ class UserListActivity : AppCompatActivity() {
         ).get(UserViewModel::class.java)
 
         setAdapter()
-
-//        binding.edtSearch.setOnClickListener{
-//            val keyword = binding.edtSearch.text.toString()
-//            if (keyword.isEmpty()) return@setOnClickListener
-//
-//            userViewModel.setUserList(keyword)
-//        }
 
         userViewModel.getUserList(UserViewModel.USER_LIST)?.observe(this, {
             if (it != null) {
@@ -93,57 +90,12 @@ class UserListActivity : AppCompatActivity() {
         }
     }
 
-/*    private fun getListUser(): ArrayList<User> {
-        val listName = resources.getStringArray(R.array.name)
-        val listUserName = resources.getStringArray(R.array.username)
-        val listLocation = resources.getStringArray(R.array.location)
-        val listRepository = resources.getStringArray(R.array.repository)
-        val listCompany = resources.getStringArray(R.array.company)
-        val listFollower = resources.getStringArray(R.array.followers)
-        val listFollowing = resources.getStringArray(R.array.following)
-        val listImage = resources.obtainTypedArray(R.array.avatar)
-
-        val userList = ArrayList<User>()
-        for (position in listName.indices) {
-            val user = User(
-                listUserName[position],
-                listName[position],
-                listLocation[position],
-                listRepository[position],
-                listCompany[position],
-                listFollower[position],
-                listFollowing[position],
-                listImage.getResourceId(position, -1)
-            )
-
-            userList.add(user)
-        }
-
-        return userList
-    }*/
-
-/*
-    private fun showList(userList: ArrayList<User>) {
-        val onItemCallBack = object : UserAdapter.OnItemClickCallback {
-            override fun onItemClick(data: User) {
-                val intent = Intent(this@UserListActivity, UserDetailActivity::class.java)
-//                intent.putExtra("data", data)
-                startActivity(intent)
-            }
-        }
-
-        binding.rvGithubUser.layoutManager = LinearLayoutManager(this)
-        val userAdapter = UserAdapter(userList, onItemCallBack)
-        binding.rvGithubUser.adapter = userAdapter
-    }
-*/
-
     private fun setAdapter() {
         val onItemCallBack = object : UserAdapter.OnItemClickCallback {
-            override fun onItemClick(data: User) {
-//                val intent = Intent(this@UserListActivity, UserDetailActivity::class.java)
-//                intent.putExtra("data", data)
-//                startActivity(intent)
+            override fun onItemClick(userName: String) {
+                val intent = Intent(this@UserListActivity, UserDetailActivity::class.java)
+                intent.putExtra( USERNAME, userName)
+                startActivity(intent)
             }
         }
 

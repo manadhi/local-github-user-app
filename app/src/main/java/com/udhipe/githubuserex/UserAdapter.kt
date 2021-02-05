@@ -14,7 +14,7 @@ class UserAdapter(
     private var listUser = arrayListOf<User>()
 
     interface OnItemClickCallback {
-        fun onItemClick(data: User)
+        fun onItemClick(userName: String)
     }
 
     fun setData(newListUser: ArrayList<User>) {
@@ -32,7 +32,7 @@ class UserAdapter(
                     .into(imgUser)
 
                 tvUsername.text = user.userName
-                itemGithubUser.setOnClickListener { onItemClickCallBack.onItemClick(user) }
+                itemGithubUser.setOnClickListener { onItemClickCallBack.onItemClick(user.userName) }
             }
         }
     }

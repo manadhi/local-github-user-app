@@ -92,6 +92,27 @@ class UserViewModel : ViewModel() {
         })
     }
 
+    fun setUserDetail(userName: String) {
+        mUserService.getUserDetail(userName).enqueue(object : Callback<User>{
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                if (response.isSuccessful) {
+                    if (response.body() != null) {
+                        mUserDetail.postValue(response.body())
+                    } else {
+                        mInfo.postValue("empty body")
+                    }
+                } else {
+                    mInfo.postValue("not success")
+                }
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                mInfo.postValue(t.message)
+            }
+
+        })
+    }
+
     fun getUserList(category: Int): LiveData<ArrayList<User>>? {
         return when (category) {
             USER_LIST -> mUserList
