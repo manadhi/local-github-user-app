@@ -24,11 +24,27 @@ class UserDetailActivity : AppCompatActivity() {
         ).get(UserViewModel::class.java)
 
         val userName = intent.getStringExtra(UserListActivity.USERNAME)
-        userName?.let { userViewModel.setUserDetail(it) }
+        userName?.let {
+            userViewModel.setUserDetail(it)
+            userViewModel.setFollowerList(it)
+            userViewModel.setFollowingList(it)
+        }
 
         userViewModel.getUserDetail().observe(this, {
             if (it != null) {
                 showUserDetail(it)
+            }
+        })
+
+        userViewModel.getUserList(UserViewModel.FOLLOWER_LIST)?.observe(this, {
+            if (it != null) {
+                showFollow(it)
+            }
+        })
+
+        userViewModel.getUserList(UserViewModel.FOLLOWING_LIST)?.observe(this, {
+            if (it != null) {
+                showFollow(it)
             }
         })
 
@@ -38,6 +54,10 @@ class UserDetailActivity : AppCompatActivity() {
         val pagerAdapter = FollowPagerAdapter(this, supportFragmentManager)
         binding.viewPager.adapter = pagerAdapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)
+
+    }
+
+    private fun showFollow(followerList: ArrayList<User>) {
 
     }
 
