@@ -1,5 +1,6 @@
 package com.udhipe.githubuserex
 
+import android.app.Activity
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
@@ -8,6 +9,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
@@ -81,6 +83,8 @@ class UserListActivity : AppCompatActivity() {
                     binding.rvGithubUser.visibility = View.GONE
                     binding.shimmerScreen.visibility = View.VISIBLE
 
+                    hideKeyboard(this@UserListActivity)
+
                     userViewModel.setUserList(keyword)
                 }
                 return true
@@ -91,7 +95,6 @@ class UserListActivity : AppCompatActivity() {
             }
 
         })
-
 
         return true
     }
@@ -122,6 +125,15 @@ class UserListActivity : AppCompatActivity() {
         binding.rvGithubUser.layoutManager = LinearLayoutManager(this)
         userAdapter = UserAdapter(onItemCallBack)
         binding.rvGithubUser.adapter = userAdapter
+    }
+
+    private fun hideKeyboard(activity: Activity) {
+        val view = activity.findViewById<View>(android.R.id.content)
+        if (view != null) {
+            val imm: InputMethodManager =
+                activity.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        }
     }
 
 }
