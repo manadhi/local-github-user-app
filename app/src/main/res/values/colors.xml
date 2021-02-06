@@ -10,4 +10,5 @@
     <color name="secondaryDarkColor">#007423</color>
     <color name="primaryTextColor">@color/white</color>
     <color name="secondaryTextColor">@color/white</color>
+    <color name="shimmerColor">#dddddd</color>
 </resources>

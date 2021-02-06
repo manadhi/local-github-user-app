@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
@@ -43,9 +44,25 @@ class UserListActivity : AppCompatActivity() {
         userViewModel.getUserList(UserViewModel.USER_LIST)?.observe(this, {
             if (it != null) {
                 userAdapter.setData(it)
+
+                binding.shimmerScreen.stopShimmer()
+                binding.shimmerScreen.visibility = View.GONE
+                binding.rvGithubUser.visibility = View.VISIBLE
             }
         })
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+//        binding.shimmerScreen.startShimmer()
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+//        binding.shimmerScreen.stopShimmer()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -61,6 +78,9 @@ class UserListActivity : AppCompatActivity() {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(keyword: String?): Boolean {
                 if (keyword != null && keyword.isNotEmpty()) {
+                    binding.rvGithubUser.visibility = View.GONE
+                    binding.shimmerScreen.visibility = View.VISIBLE
+
                     userViewModel.setUserList(keyword)
                 }
                 return true
@@ -94,7 +114,7 @@ class UserListActivity : AppCompatActivity() {
         val onItemCallBack = object : UserAdapter.OnItemClickCallback {
             override fun onItemClick(userName: String) {
                 val intent = Intent(this@UserListActivity, UserDetailActivity::class.java)
-                intent.putExtra( USERNAME, userName)
+                intent.putExtra(USERNAME, userName)
                 startActivity(intent)
             }
         }
