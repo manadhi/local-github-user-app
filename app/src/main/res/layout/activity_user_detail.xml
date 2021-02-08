@@ -176,8 +176,10 @@
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:tabIndicatorHeight="@dimen/small_62"
+                app:tabSelectedTextColor="@color/primaryDarkColor"
                 android:layout_marginTop="@dimen/normal_100"
-                android:background="@color/secondaryColor" />
+                android:background="@drawable/rounded_top_square_green" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/view_pager"
