@@ -11,7 +11,49 @@
         android:layout_height="match_parent"
         android:paddingTop="@dimen/padding"
         android:paddingBottom="@dimen/padding"
+        android:visibility="gone"
         tools:itemCount="12"
         tools:listitem="@layout/item_github_user" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/padding"
+        android:paddingBottom="@dimen/padding"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
 </RelativeLayout>

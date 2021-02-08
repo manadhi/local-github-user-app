@@ -3,6 +3,7 @@ package com.udhipe.githubuserex
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.udhipe.githubuserex.databinding.ActivityUserDetailBinding
@@ -18,6 +19,14 @@ class UserDetailActivity : AppCompatActivity() {
         binding = ActivityUserDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.shimmerScreen.visibility = View.VISIBLE
+        binding.originView.visibility = View.GONE
+
+        // update
+        val pagerAdapter = FollowPagerAdapter(this, supportFragmentManager)
+        binding.viewPager.adapter = pagerAdapter
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
+
         userViewModel = ViewModelProvider(
             this,
             ViewModelProvider.NewInstanceFactory()
@@ -32,33 +41,14 @@ class UserDetailActivity : AppCompatActivity() {
 
         userViewModel.getUserDetail().observe(this, {
             if (it != null) {
+                binding.shimmerScreen.stopShimmer()
+                binding.shimmerScreen.visibility = View.GONE
+                binding.originView.visibility = View.VISIBLE
                 showUserDetail(it)
             }
         })
 
-        userViewModel.getUserList(UserViewModel.FOLLOWER_LIST)?.observe(this, {
-            if (it != null) {
-                showFollow(it)
-            }
-        })
-
-        userViewModel.getUserList(UserViewModel.FOLLOWING_LIST)?.observe(this, {
-            if (it != null) {
-                showFollow(it)
-            }
-        })
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        // update
-        val pagerAdapter = FollowPagerAdapter(this, supportFragmentManager)
-        binding.viewPager.adapter = pagerAdapter
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
-
-    }
-
-    private fun showFollow(followerList: ArrayList<User>) {
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -23,6 +23,10 @@ class FollowFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentFollowBinding.inflate(layoutInflater, container, false)
+
+        binding?.rvFollow?.visibility = View.GONE
+        binding?.shimmerScreen?.visibility = View.VISIBLE
+
         return binding?.root
     }
 
@@ -40,6 +44,10 @@ class FollowFragment : Fragment() {
         if (index != null) {
             userViewModel.getUserList(index)?.observe(this, {
                 if (it != null) {
+                    binding?.shimmerScreen?.stopShimmer()
+                    binding?.shimmerScreen?.visibility = View.GONE
+                    binding?.rvFollow?.visibility = View.VISIBLE
+
                     userAdapter.setData(it)
                 }
             })
