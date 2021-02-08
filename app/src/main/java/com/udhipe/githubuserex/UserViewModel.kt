@@ -12,9 +12,9 @@ import retrofit2.Response
 class UserViewModel : ViewModel() {
 
     companion object {
-        public final val USER_LIST = 1
-        public final val FOLLOWER_LIST = 2
-        public final val FOLLOWING_LIST = 3
+        const val USER_LIST = 1
+        const val FOLLOWER_LIST = 2
+        const val FOLLOWING_LIST = 3
     }
 
     private val mUserService = NetworkService.getNetworkService()
@@ -23,6 +23,15 @@ class UserViewModel : ViewModel() {
     private val mFollowingList = MutableLiveData<ArrayList<User>>()
     private val mUserDetail = MutableLiveData<User>()
     private val mInfo = MutableLiveData<String>()
+    private val mKeyword = MutableLiveData<String>()
+
+    fun setKeyword(keyword: String) {
+        mKeyword.postValue(keyword)
+    }
+
+    fun getKeyWord(): LiveData<String> {
+        return mKeyword
+    }
 
     fun setUserList(userName: String) {
         mUserService.getUser(userName).enqueue(object : Callback<UserResponse> {

@@ -54,6 +54,42 @@ class UserListActivity : AppCompatActivity() {
             }
         })
 
+        setListener()
+
+    }
+
+    private fun setListener() {
+        userViewModel.getKeyWord().observe(this, {
+            if (it != null) {
+                binding.searchView.setQuery(it, false)
+            }
+        })
+
+        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        binding.searchView.requestFocus()
+        binding.searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(keyword: String?): Boolean {
+                if (keyword != null && keyword.isNotEmpty()) {
+
+                    binding.rvGithubUser.visibility = View.GONE
+                    binding.shimmerScreen.visibility = View.VISIBLE
+
+                    hideKeyboard(this@UserListActivity)
+
+                    userViewModel.setUserList(keyword)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(keyword: String?): Boolean {
+                keyword?.let { userViewModel.setKeyword(it) }
+
+                return true
+            }
+
+        })
+
     }
 
     override fun onResume() {
@@ -71,31 +107,6 @@ class UserListActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.app_menu, menu)
-
-        // search
-        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
-        val searchView = menu?.findItem(R.id.search)?.actionView as SearchView
-
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
-        searchView.queryHint = resources.getString(R.string.search_hint)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(keyword: String?): Boolean {
-                if (keyword != null && keyword.isNotEmpty()) {
-                    binding.rvGithubUser.visibility = View.GONE
-                    binding.shimmerScreen.visibility = View.VISIBLE
-
-                    hideKeyboard(this@UserListActivity)
-
-                    userViewModel.setUserList(keyword)
-                }
-                return true
-            }
-
-            override fun onQueryTextChange(keyword: String?): Boolean {
-                return false
-            }
-
-        })
 
         return true
     }
