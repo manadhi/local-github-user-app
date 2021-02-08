@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="developer">Dikembangkan oleh Udhi Permana</string>
+    <string name="contact_us">Hubungi Kami</string>
+    <string name="avatar">avatar</string>
+    <string name="repository">Repositori</string>
+    <string name="follower">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="company">Korporasi</string>
+    <string name="location">Lokasi</string>
+    <string name="license">Lisensi</string>
+    <string name="about">Tentang</string>
+    <string name="chooser_title">Pilih <i>Email client</i> :</string>
+    <string name="language_setting">Pengaturan Bahasa</string>
+    <string name="search">Pencarian</string>
+    <string name="search_hint">cari di sini</string>
+    <string name="copy">salin</string>
+</resources>

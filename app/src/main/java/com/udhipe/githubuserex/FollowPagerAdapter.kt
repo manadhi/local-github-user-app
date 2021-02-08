@@ -8,7 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 class FollowPagerAdapter(private val mContext: Context, fragmentManager: FragmentManager) :
     FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    private val tabTitles = intArrayOf(R.string.tab_follower, R.string.tab_following)
+    private val tabTitles = intArrayOf(R.string.follower, R.string.following)
 
     override fun getCount(): Int {
         return 2

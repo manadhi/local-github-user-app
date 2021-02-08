@@ -5,6 +5,7 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -105,10 +106,17 @@ class UserListActivity : AppCompatActivity() {
                 startActivity(Intent(this, OssLicensesMenuActivity::class.java))
                 true
             }
+
             R.id.about -> {
                 startActivity(Intent(this, AboutAppActivity::class.java))
                 true
             }
+
+            R.id.language_setting -> {
+                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+                true
+            }
+
             else -> super.onOptionsItemSelected(item)
         }
     }

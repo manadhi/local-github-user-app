@@ -14,8 +14,8 @@ import com.udhipe.githubuserex.databinding.ActivityAboutAppBinding
 class AboutAppActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAboutAppBinding
-    private val subject = "Github User Explorer"
-    private val target = "udhi.permana@gmail.com"
+    private lateinit var subject: String
+    private lateinit var target: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +23,11 @@ class AboutAppActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "About"
+        supportActionBar?.title = getString(R.string.about)
+
+        subject = getString(R.string.app_name)
+        target = getString(R.string.my_email)
+
 
         binding.btnContactUs.setOnClickListener {
             val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
@@ -39,10 +43,11 @@ class AboutAppActivity : AppCompatActivity() {
             if (emailIntent.resolveActivity(packageManager) != null) {
                 startActivity(chooser)
             } else {
-                val clipboard: ClipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+                val clipboard: ClipboardManager =
+                    getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
                 val clip = ClipData.newPlainText("", target)
                 clipboard.setPrimaryClip(clip)
-                Toast.makeText(this, "copied e-mail $target", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.copy) + " $target", Toast.LENGTH_SHORT).show()
             }
         }
     }
