@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin16"
-            android:layout_marginEnd="@dimen/margin16"
+            android:layout_marginStart="@dimen/normal_100"
+            android:layout_marginEnd="@dimen/normal_100"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,20 +27,20 @@
 
                 <ImageView
                     android:id="@+id/img_user_avatar"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="@dimen/large_40"
+                    android:layout_height="@dimen/large_40"
+                    android:layout_marginTop="@dimen/normal_100"
                     android:contentDescription="@string/avatar"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_name"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin16"
-                    android:layout_marginTop="@dimen/margin16"
-                    android:textSize="24sp"
+                    android:layout_marginStart="@dimen/normal_100"
+                    android:layout_marginTop="@dimen/normal_100"
+                    android:textSize="@dimen/headline_5"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
@@ -49,10 +49,10 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_company"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin16"
-                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/normal_100"
+                    android:textSize="@dimen/subtitle_01"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
                     app:layout_constraintTop_toBottomOf="@+id/tv_name"
@@ -60,10 +60,10 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_location"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin16"
-                    android:textSize="16sp"
+                    android:layout_marginStart="@dimen/normal_100"
+                    android:textSize="@dimen/subtitle_01"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
                     app:layout_constraintTop_toBottomOf="@+id/tv_company"
@@ -75,19 +75,19 @@
                 android:id="@+id/wrapper_user_info_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin16"
+                android:layout_marginTop="@dimen/normal_100"
                 android:orientation="horizontal"
                 android:weightSum="3">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="@dimen/small_125"
+                    android:layout_marginEnd="@dimen/small_62"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_square_white_black"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="@dimen/small_125">
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
@@ -95,7 +95,7 @@
                         android:gravity="center"
                         android:text="@string/repository"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/subtitle_01"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -104,21 +104,21 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/subtitle_01"
                         tools:text="50" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="@dimen/small_62"
+                    android:layout_marginTop="@dimen/small_125"
+                    android:layout_marginEnd="@dimen/small_62"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_square_white_black"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="@dimen/small_125">
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
@@ -126,7 +126,7 @@
                         android:gravity="center"
                         android:text="@string/follower"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/subtitle_01"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -135,7 +135,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/subtitle_01"
                         tools:text="20" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -148,7 +148,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/rounded_square_white_black"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="@dimen/small_125">
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
@@ -156,7 +156,7 @@
                         android:gravity="center"
                         android:text="@string/following"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/subtitle_01"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -165,7 +165,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/subtitle_01"
                         tools:text="10" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
@@ -176,13 +176,13 @@
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin16"
+                android:layout_marginTop="@dimen/normal_100"
                 android:background="@color/secondaryColor" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/small_0"
                 android:layout_weight="1" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -192,9 +192,10 @@
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_screen"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent"
-        android:paddingStart="@dimen/margin16"
-        android:paddingEnd="@dimen/margin16">
+        android:paddingStart="@dimen/normal_100"
+        android:paddingEnd="@dimen/normal_100">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -207,21 +208,21 @@
 
                 <ImageView
                     android:id="@+id/img_user_avatar_shimmer"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="@dimen/large_40"
+                    android:layout_height="@dimen/large_40"
+                    android:layout_marginTop="@dimen/normal_100"
                     android:background="@drawable/circle_grey"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_name_shimmer"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin16"
-                    android:layout_marginTop="@dimen/margin16"
+                    android:layout_marginStart="@dimen/normal_100"
+                    android:layout_marginTop="@dimen/normal_100"
                     android:background="@drawable/rounded_square_grey"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/headline_5"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar_shimmer"
@@ -229,24 +230,24 @@
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_company_shimmer"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin16"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="@dimen/normal_100"
+                    android:layout_marginTop="@dimen/small_37"
                     android:background="@drawable/rounded_square_grey"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/subtitle_01"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar_shimmer"
                     app:layout_constraintTop_toBottomOf="@+id/tv_name_shimmer" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_location_shimmer"
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin16"
-                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="@dimen/normal_100"
+                    android:layout_marginTop="@dimen/small_37"
                     android:background="@drawable/rounded_square_grey"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/subtitle_01"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar_shimmer"
                     app:layout_constraintTop_toBottomOf="@+id/tv_company_shimmer" />
@@ -257,19 +258,19 @@
                 android:id="@+id/wrapper_user_info_card_shimmer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin16"
+                android:layout_marginTop="@dimen/normal_100"
                 android:orientation="horizontal"
                 android:weightSum="3">
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="@dimen/small_125"
+                    android:layout_marginEnd="@dimen/small_62"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_square_white_black"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="@dimen/small_125">
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
@@ -277,7 +278,7 @@
                         android:gravity="center"
                         android:text="@string/repository"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/subtitle_01"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -286,20 +287,20 @@
                         android:background="@drawable/rounded_square_grey"
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp" />
+                        android:textSize="@dimen/subtitle_01" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="@dimen/small_62"
+                    android:layout_marginTop="@dimen/small_125"
+                    android:layout_marginEnd="@dimen/small_62"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_square_white_black"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="@dimen/small_125">
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
@@ -307,7 +308,7 @@
                         android:gravity="center"
                         android:text="@string/follower"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/subtitle_01"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -316,19 +317,19 @@
                         android:background="@drawable/rounded_square_grey"
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp" />
+                        android:textSize="@dimen/subtitle_01" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="0dp"
+                    android:layout_width="@dimen/small_0"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="@dimen/small_62"
+                    android:layout_marginTop="@dimen/small_125"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_square_white_black"
                     android:orientation="vertical"
-                    android:padding="10dp">
+                    android:padding="@dimen/small_125">
 
                     <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
@@ -336,7 +337,7 @@
                         android:gravity="center"
                         android:text="@string/following"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/subtitle_01"
                         android:textStyle="bold" />
 
                     <com.google.android.material.textview.MaterialTextView
@@ -345,7 +346,7 @@
                         android:background="@drawable/rounded_square_grey"
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
-                        android:textSize="16sp" />
+                        android:textSize="@dimen/subtitle_01" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 

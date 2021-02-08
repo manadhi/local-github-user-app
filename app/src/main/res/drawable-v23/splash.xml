@@ -3,5 +3,7 @@
     <item android:drawable="@android:color/white" />
     <item
         android:drawable="@drawable/ic_g_explorer"
+        android:height="@dimen/large_100"
+        android:width="@dimen/large_100"
         android:gravity="center" />
 </layer-list>

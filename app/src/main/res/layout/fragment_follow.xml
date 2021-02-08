@@ -9,8 +9,8 @@
         android:id="@+id/rv_follow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/padding"
-        android:paddingBottom="@dimen/padding"
+        android:paddingTop="@dimen/small_100"
+        android:paddingBottom="@dimen/small_100"
         android:visibility="gone"
         tools:itemCount="12"
         tools:listitem="@layout/item_github_user" />
@@ -19,8 +19,8 @@
         android:id="@+id/shimmer_screen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/padding"
-        android:paddingBottom="@dimen/padding"
+        android:paddingTop="@dimen/small_100"
+        android:paddingBottom="@dimen/small_100"
         android:visibility="gone">
 
         <androidx.appcompat.widget.LinearLayoutCompat

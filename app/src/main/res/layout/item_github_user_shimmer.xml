@@ -4,14 +4,14 @@
     android:id="@+id/item_github_user"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="8dp"
-    android:paddingBottom="8dp">
+    android:paddingTop="@dimen/small_100"
+    android:paddingBottom="@dimen/small_100">
 
     <ImageView
         android:id="@+id/img_user"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="@dimen/normal_350"
+        android:layout_height="@dimen/normal_350"
+        android:layout_marginStart="@dimen/subtitle_01"
         android:background="@drawable/circle_grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,12 +19,12 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_username"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/small_0"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="@dimen/margin16"
+        android:layout_marginStart="@dimen/normal_100"
+        android:layout_marginEnd="@dimen/normal_100"
         android:background="@drawable/rounded_square_grey"
-        android:textSize="24sp"
+        android:textSize="@dimen/headline_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_user"

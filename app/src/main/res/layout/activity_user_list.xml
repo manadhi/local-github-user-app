@@ -9,19 +9,23 @@
         android:id="@+id/rv_github_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/padding"
-        android:paddingBottom="@dimen/padding"
+        android:layout_marginStart="@dimen/normal_100"
+        android:layout_marginEnd="@dimen/normal_100"
+        android:paddingTop="@dimen/small_100"
+        android:paddingBottom="@dimen/small_100"
         android:visibility="gone"
         tools:itemCount="12"
         tools:listitem="@layout/item_github_user" />
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_screen"
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/padding"
-        android:paddingBottom="@dimen/padding">
+        android:layout_marginStart="@dimen/normal_100"
+        android:layout_marginEnd="@dimen/normal_100"
+        android:paddingTop="@dimen/small_100"
+        android:paddingBottom="@dimen/small_100"
+        android:visibility="gone">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
