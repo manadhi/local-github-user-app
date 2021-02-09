@@ -15,4 +15,7 @@
     <string name="search">Pencarian</string>
     <string name="search_hint">cari di sini</string>
     <string name="copy">salin</string>
+    <string name="empty_list">Sepi di sini. Gunakan fitur pencarian untuk mendapatkan daftar pengguna</string>
+    <string name="can_not_find_user">Can not find the user. Try another search query.</string>
+    <string name="something_is_wrong">Something is wrong. Please try again later.</string>
 </resources>

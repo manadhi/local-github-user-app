@@ -11,6 +11,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
@@ -47,11 +48,24 @@ class UserListActivity : AppCompatActivity() {
         userViewModel.getUserList(UserViewModel.USER_LIST)?.observe(this, {
             if (it != null) {
                 userAdapter.setData(it)
-
-                binding.shimmerScreen.stopShimmer()
-                binding.shimmerScreen.visibility = View.GONE
-                binding.rvGithubUser.visibility = View.VISIBLE
             }
+        })
+
+        userViewModel.getInfo().observe(this, {
+            when (it) {
+                null, "", UserViewModel.DATA_EXIST -> binding.tvInfo.visibility = View.GONE
+
+                UserViewModel.DATA_EMPTY -> {
+                    binding.tvInfo.visibility = View.VISIBLE
+                    binding.tvInfo.text = getString(R.string.can_not_find_user)
+                }
+
+                else -> Toast.makeText(this, getString(R.string.something_is_wrong), Toast.LENGTH_SHORT).show()
+            }
+
+            binding.shimmerScreen.stopShimmer()
+            binding.shimmerScreen.visibility = View.GONE
+            binding.rvGithubUser.visibility = View.VISIBLE
         })
 
         setListener()
@@ -66,12 +80,12 @@ class UserListActivity : AppCompatActivity() {
         })
 
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
-        binding.searchView.requestFocus()
         binding.searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(keyword: String?): Boolean {
                 if (keyword != null && keyword.isNotEmpty()) {
 
+                    binding.tvInfo.visibility = View.GONE
                     binding.rvGithubUser.visibility = View.GONE
                     binding.shimmerScreen.visibility = View.VISIBLE
 

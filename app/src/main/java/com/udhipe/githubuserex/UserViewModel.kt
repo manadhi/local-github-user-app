@@ -15,6 +15,8 @@ class UserViewModel : ViewModel() {
         const val USER_LIST = 1
         const val FOLLOWER_LIST = 2
         const val FOLLOWING_LIST = 3
+        const val DATA_EMPTY = "data empty"
+        const val DATA_EXIST = "data exist"
     }
 
     private val mUserService = NetworkService.getNetworkService()
@@ -38,7 +40,14 @@ class UserViewModel : ViewModel() {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
-                        mUserList.postValue(response.body()?.items)
+                        val userList = response.body()?.items
+                        mUserList.postValue(userList)
+
+                        if (userList == null || userList.size == 0) {
+                            mInfo.postValue(DATA_EMPTY)
+                        } else {
+                            mInfo.postValue(DATA_EXIST)
+                        }
                     } else {
                         mInfo.postValue("empty body")
                     }
@@ -133,6 +142,10 @@ class UserViewModel : ViewModel() {
 
     fun getUserDetail(): LiveData<User> {
         return mUserDetail
+    }
+
+    fun getInfo(): LiveData<String> {
+        return mInfo
     }
 
 }

@@ -16,4 +16,7 @@
     <string name="language_setting">Language Setting</string>
     <string name="copy">copied</string>
     <string name="my_email" translatable="false">udhi.permana@gmail.com</string>
+    <string name="empty_list">It\'s lonely here. Use the search feature to get a list of users</string>
+    <string name="can_not_find_user">Can not find the user. Try another search query.</string>
+    <string name="something_is_wrong">Something is wrong. Please try again later.</string>
 </resources>
