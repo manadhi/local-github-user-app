@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udhipe.githubuserex.databinding.FragmentFollowBinding
@@ -44,12 +45,39 @@ class FollowFragment : Fragment() {
         if (index != null) {
             userViewModel.getUserList(index)?.observe(this, {
                 if (it != null) {
-                    binding?.shimmerScreen?.stopShimmer()
-                    binding?.shimmerScreen?.visibility = View.GONE
-                    binding?.rvFollow?.visibility = View.VISIBLE
-
                     userAdapter.setData(it)
                 }
+            })
+
+            userViewModel.getInfo(index).observe(this, {
+                when (it) {
+                    UserViewModel.DATA_EXIST -> {
+                        binding?.tvInfo?.visibility = View.GONE
+                    }
+
+                    null, "", UserViewModel.DATA_EMPTY -> {
+
+                        var info: Int = if (index == UserViewModel.FOLLOWER_LIST) {
+                            R.string.no_follower
+                        } else {
+                            R.string.no_following
+                        }
+
+                        binding?.tvInfo?.text = getString(info)
+                        binding?.tvInfo?.visibility = View.VISIBLE
+
+                    }
+
+                    else -> Toast.makeText(
+                        context,
+                        getString(R.string.something_is_wrong),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+                binding?.shimmerScreen?.stopShimmer()
+                binding?.shimmerScreen?.visibility = View.GONE
+                binding?.rvFollow?.visibility = View.VISIBLE
             })
         }
 

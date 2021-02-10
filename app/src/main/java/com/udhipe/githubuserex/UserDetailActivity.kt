@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.udhipe.githubuserex.databinding.ActivityUserDetailBinding
@@ -41,14 +42,37 @@ class UserDetailActivity : AppCompatActivity() {
 
         userViewModel.getUserDetail().observe(this, {
             if (it != null) {
-                binding.shimmerScreen.stopShimmer()
-                binding.shimmerScreen.visibility = View.GONE
-                binding.originView.visibility = View.VISIBLE
+//                binding.shimmerScreen.stopShimmer()
+//                binding.shimmerScreen.visibility = View.GONE
+//                binding.originView.visibility = View.VISIBLE
                 showUserDetail(it)
             }
         })
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        userViewModel.getInfo(UserViewModel.USER_DETAIL).observe(this, {
+            when (it) {
+                UserViewModel.DATA_EXIST -> {}
+
+                null, "", UserViewModel.DATA_EMPTY -> Toast.makeText(
+                    this,
+                    getString(R.string.can_not_find_user_detail),
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                else -> Toast.makeText(
+                    this,
+                    getString(R.string.something_is_wrong),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            binding.shimmerScreen.stopShimmer()
+            binding.shimmerScreen.visibility = View.GONE
+            binding.originView.visibility = View.VISIBLE
+        })
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

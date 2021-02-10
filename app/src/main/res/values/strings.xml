@@ -18,5 +18,8 @@
     <string name="my_email" translatable="false">udhi.permana@gmail.com</string>
     <string name="empty_list">It\'s lonely here. Use the search feature to get a list of users</string>
     <string name="can_not_find_user">Can not find the user. Try another search query.</string>
+    <string name="can_not_find_user_detail">Can not find user\'s detail</string>
     <string name="something_is_wrong">Something is wrong. Please try again later.</string>
+    <string name="no_follower">User doesn\'t have follower</string>
+    <string name="no_following">User doesn\'t follow anyone</string>
 </resources>

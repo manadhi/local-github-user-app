@@ -16,6 +16,9 @@
     <string name="search_hint">cari di sini</string>
     <string name="copy">salin</string>
     <string name="empty_list">Sepi di sini. Gunakan fitur pencarian untuk mendapatkan daftar pengguna</string>
-    <string name="can_not_find_user">Can not find the user. Try another search query.</string>
-    <string name="something_is_wrong">Something is wrong. Please try again later.</string>
+    <string name="can_not_find_user">Tidak dapat menemukan pengguna. Coba gunakan kueri pencarian lain</string>
+    <string name="can_not_find_user_detail">Tidak dapat menemukan detail pengguna</string>
+    <string name="something_is_wrong">Terjadi kesalahan. Silakan coba lagi nanti</string>
+    <string name="no_follower">Pengguna tidak memiliki pengikut</string>
+    <string name="no_following">Pengguna tidak mengikuti seorangpun</string>
 </resources>

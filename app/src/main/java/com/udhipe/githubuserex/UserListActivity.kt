@@ -51,7 +51,7 @@ class UserListActivity : AppCompatActivity() {
             }
         })
 
-        userViewModel.getInfo().observe(this, {
+        userViewModel.getInfo(UserViewModel.USER_LIST).observe(this, {
             when (it) {
                 null, "", UserViewModel.DATA_EXIST -> binding.tvInfo.visibility = View.GONE
 

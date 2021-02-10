@@ -15,6 +15,7 @@ class UserViewModel : ViewModel() {
         const val USER_LIST = 1
         const val FOLLOWER_LIST = 2
         const val FOLLOWING_LIST = 3
+        const val USER_DETAIL = 4
         const val DATA_EMPTY = "data empty"
         const val DATA_EXIST = "data exist"
     }
@@ -24,7 +25,10 @@ class UserViewModel : ViewModel() {
     private val mFollowerList = MutableLiveData<ArrayList<User>>()
     private val mFollowingList = MutableLiveData<ArrayList<User>>()
     private val mUserDetail = MutableLiveData<User>()
-    private val mInfo = MutableLiveData<String>()
+    private val mUserListInfo = MutableLiveData<String>()
+    private val mUserDetailInfo = MutableLiveData<String>()
+    private val mFollowerInfo = MutableLiveData<String>()
+    private val mFollowingInfo = MutableLiveData<String>()
     private val mKeyword = MutableLiveData<String>()
 
     fun setKeyword(keyword: String) {
@@ -44,20 +48,20 @@ class UserViewModel : ViewModel() {
                         mUserList.postValue(userList)
 
                         if (userList == null || userList.size == 0) {
-                            mInfo.postValue(DATA_EMPTY)
+                            mUserListInfo.postValue(DATA_EMPTY)
                         } else {
-                            mInfo.postValue(DATA_EXIST)
+                            mUserListInfo.postValue(DATA_EXIST)
                         }
                     } else {
-                        mInfo.postValue("empty body")
+                        mUserListInfo.postValue("empty body")
                     }
                 } else {
-                    mInfo.postValue("not success")
+                    mUserListInfo.postValue("not success")
                 }
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                mInfo.postValue(t.message)
+                mUserListInfo.postValue(t.message)
             }
 
         })
@@ -71,17 +75,24 @@ class UserViewModel : ViewModel() {
             ) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
-                        mFollowerList.postValue(response.body())
+                        val followerList = response.body()
+                        mFollowerList.postValue(followerList)
+
+                        if (followerList == null || followerList.size == 0) {
+                            mFollowerInfo.postValue(DATA_EMPTY)
+                        } else {
+                            mFollowerInfo.postValue(DATA_EXIST)
+                        }
                     } else {
-                        mInfo.postValue("empty body")
+                        mFollowerInfo.postValue("empty body")
                     }
                 } else {
-                    mInfo.postValue("not success")
+                    mFollowerInfo.postValue("not success")
                 }
             }
 
             override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
-                mInfo.postValue(t.message)
+                mFollowerInfo.postValue(t.message)
             }
         })
     }
@@ -94,38 +105,47 @@ class UserViewModel : ViewModel() {
             ) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
-                        mFollowingList.postValue(response.body())
+                        val followingList = response.body()
+                        mFollowingList.postValue(followingList)
+
+                        if (followingList == null || followingList.size == 0) {
+                            mFollowingInfo.postValue(DATA_EMPTY)
+                        } else {
+                            mFollowingInfo.postValue(DATA_EXIST)
+                        }
+
                     } else {
-                        mInfo.postValue("empty body")
+                        mFollowingInfo.postValue("empty body")
                     }
                 } else {
-                    mInfo.postValue("not success")
+                    mFollowingInfo.postValue("not success")
                 }
             }
 
             override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
-                mInfo.postValue(t.message)
+                mFollowingInfo.postValue(t.message)
             }
 
         })
     }
 
     fun setUserDetail(userName: String) {
-        mUserService.getUserDetail(userName).enqueue(object : Callback<User>{
+        mUserService.getUserDetail(userName).enqueue(object : Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
                         mUserDetail.postValue(response.body())
+                        mUserDetailInfo.postValue(DATA_EXIST)
                     } else {
-                        mInfo.postValue("empty body")
+                        mUserDetailInfo.postValue(DATA_EMPTY)
                     }
                 } else {
-                    mInfo.postValue("not success")
+                    mUserDetailInfo.postValue("not success")
                 }
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {
-                mInfo.postValue(t.message)
+                mUserDetailInfo.postValue(t.message)
             }
 
         })
@@ -144,8 +164,13 @@ class UserViewModel : ViewModel() {
         return mUserDetail
     }
 
-    fun getInfo(): LiveData<String> {
-        return mInfo
+    fun getInfo(category: Int): LiveData<String> {
+        return when (category) {
+            USER_LIST -> mUserListInfo
+            FOLLOWER_LIST -> mFollowerInfo
+            FOLLOWING_LIST -> mFollowingInfo
+            else -> mUserDetailInfo
+        }
     }
 
 }

@@ -30,6 +30,7 @@
                     android:layout_width="@dimen/large_40"
                     android:layout_height="@dimen/large_40"
                     android:layout_marginTop="@dimen/normal_100"
+                    android:background="@drawable/circle_grey"
                     android:contentDescription="@string/avatar"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +46,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Udhi Udhi Udhi Udhi Udhi" />
+                    android:text="Name" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_company"
@@ -56,7 +57,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
                     app:layout_constraintTop_toBottomOf="@+id/tv_name"
-                    tools:text="PT. JAYA JAYA JAYA JAYA JAYA JAYA" />
+                    android:text="Company" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_location"
@@ -67,7 +68,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
                     app:layout_constraintTop_toBottomOf="@+id/tv_company"
-                    tools:text="Jakarta Jakarta Jakarta Jakarta Jakarta Jakarta Jakarta Jakarta Jakarta Jakarta" />
+                    android:text="Location" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -105,7 +106,7 @@
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
                         android:textSize="@dimen/subtitle_01"
-                        tools:text="50" />
+                        android:text="-" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -136,7 +137,7 @@
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
                         android:textSize="@dimen/subtitle_01"
-                        tools:text="20" />
+                        android:text="-" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -166,7 +167,7 @@
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
                         android:textSize="@dimen/subtitle_01"
-                        tools:text="10" />
+                        android:text="-" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
