@@ -86,19 +86,19 @@ class UserDetailActivity : AppCompatActivity() {
 
     }
 
-    private fun showUserDetail(user: User) {
-        supportActionBar?.title = user.userName
+    private fun showUserDetail(user: User?) {
+        supportActionBar?.title = user?.userName
 
         with(binding) {
-            tvName.text = user.name
-            tvRepository.text = user.repository.toString()
-            tvFollower.text = user.followers.toString()
-            tvFollowing.text = user.following.toString()
-            tvCompany.text = user.company
-            tvLocation.text = user.location
+            tvName.text = user?.name?:"-"
+            tvRepository.text = user?.repository.toString()
+            tvFollower.text = user?.followers.toString()
+            tvFollowing.text = user?.following.toString()
+            tvCompany.text = user?.company?:"-"
+            tvLocation.text = user?.location?:"-"
 
             Glide.with(root.context)
-                .load(user.avatar)
+                .load(user?.avatar)
                 .circleCrop()
                 .into(imgUserAvatar)
 

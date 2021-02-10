@@ -29,6 +29,7 @@ class UserAdapter(
             with(binding) {
                 Glide.with(itemView.context)
                     .load(user.avatar)
+                    .circleCrop()
                     .into(imgUser)
 
                 tvUsername.text = user.userName
