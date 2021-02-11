@@ -30,7 +30,6 @@
                     android:layout_width="@dimen/large_40"
                     android:layout_height="@dimen/large_40"
                     android:layout_marginTop="@dimen/normal_100"
-                    android:background="@drawable/circle_grey"
                     android:contentDescription="@string/avatar"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -45,8 +44,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:text="Name" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_company"
@@ -56,8 +54,7 @@
                     android:textSize="@dimen/subtitle_01"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_name"
-                    android:text="Company" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_location"
@@ -67,8 +64,7 @@
                     android:textSize="@dimen/subtitle_01"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_user_avatar"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_company"
-                    android:text="Location" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_company" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -105,8 +101,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
-                        android:textSize="@dimen/subtitle_01"
-                        android:text="-" />
+                        android:textSize="@dimen/subtitle_01" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -136,8 +131,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
-                        android:textSize="@dimen/subtitle_01"
-                        android:text="-" />
+                        android:textSize="@dimen/subtitle_01" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -166,8 +160,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:textColor="@color/primaryColor"
-                        android:textSize="@dimen/subtitle_01"
-                        android:text="-" />
+                        android:textSize="@dimen/subtitle_01" />
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -195,8 +188,8 @@
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_screen"
         android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
         android:paddingStart="@dimen/normal_100"
         android:paddingEnd="@dimen/normal_100">
 

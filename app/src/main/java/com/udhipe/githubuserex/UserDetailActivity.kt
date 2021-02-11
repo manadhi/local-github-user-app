@@ -21,7 +21,9 @@ class UserDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.shimmerScreen.visibility = View.VISIBLE
-        binding.originView.visibility = View.GONE
+        binding.shimmerScreen.startShimmer()
+
+//        binding.originView.visibility = View.GONE
 
         // update
         val pagerAdapter = FollowPagerAdapter(this, supportFragmentManager)
@@ -70,7 +72,7 @@ class UserDetailActivity : AppCompatActivity() {
 
             binding.shimmerScreen.stopShimmer()
             binding.shimmerScreen.visibility = View.GONE
-            binding.originView.visibility = View.VISIBLE
+//            binding.originView.visibility = View.VISIBLE
         })
 
     }
@@ -100,6 +102,7 @@ class UserDetailActivity : AppCompatActivity() {
             Glide.with(root.context)
                 .load(user?.avatar)
                 .circleCrop()
+                .placeholder(R.drawable.circle_grey)
                 .into(imgUserAvatar)
 
         }
