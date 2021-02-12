@@ -1,8 +1,7 @@
 package com.udhipe.githubuserex.network
 
 import com.udhipe.githubuserex.BuildConfig
-import com.udhipe.githubuserex.User
-import okhttp3.ResponseBody
+import com.udhipe.githubuserex.data.User
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

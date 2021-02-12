@@ -1,8 +1,9 @@
-package com.udhipe.githubuserex
+package com.udhipe.githubuserex.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.udhipe.githubuserex.data.User
 import com.udhipe.githubuserex.network.NetworkService
 import com.udhipe.githubuserex.network.UserResponse
 import retrofit2.Call

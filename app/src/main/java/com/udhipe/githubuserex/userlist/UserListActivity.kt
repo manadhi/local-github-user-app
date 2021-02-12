@@ -1,4 +1,4 @@
-package com.udhipe.githubuserex
+package com.udhipe.githubuserex.userlist
 
 import android.app.Activity
 import android.app.SearchManager
@@ -17,7 +17,12 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+import com.udhipe.githubuserex.R
+import com.udhipe.githubuserex.about.AboutAppActivity
+import com.udhipe.githubuserex.sharedadapter.UserAdapter
 import com.udhipe.githubuserex.databinding.ActivityUserListBinding
+import com.udhipe.githubuserex.userdetail.UserDetailActivity
+import com.udhipe.githubuserex.viewmodel.UserViewModel
 
 
 class UserListActivity : AppCompatActivity() {

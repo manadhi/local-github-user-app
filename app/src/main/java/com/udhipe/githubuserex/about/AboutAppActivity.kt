@@ -1,4 +1,4 @@
-package com.udhipe.githubuserex
+package com.udhipe.githubuserex.about
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.udhipe.githubuserex.R
 import com.udhipe.githubuserex.databinding.ActivityAboutAppBinding
 
 

@@ -1,4 +1,4 @@
-package com.udhipe.githubuserex
+package com.udhipe.githubuserex.userdetail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,11 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.udhipe.githubuserex.R
+import com.udhipe.githubuserex.data.User
+import com.udhipe.githubuserex.userlist.UserListActivity
 import com.udhipe.githubuserex.databinding.ActivityUserDetailBinding
+import com.udhipe.githubuserex.viewmodel.UserViewModel
 
 class UserDetailActivity : AppCompatActivity() {
 

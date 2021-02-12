@@ -1,4 +1,4 @@
-package com.udhipe.githubuserex
+package com.udhipe.githubuserex.data
 
 import com.google.gson.annotations.SerializedName
 

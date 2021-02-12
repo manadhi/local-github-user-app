@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubUserExplorer">
         <activity
-            android:name=".SplashActivity"
+            android:name=".splash.SplashActivity"
             android:theme="@style/Theme.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,9 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AboutAppActivity" />
-        <activity android:name=".UserDetailActivity" />
-        <activity android:name=".UserListActivity" />
+        <activity android:name=".about.AboutAppActivity" />
+        <activity android:name=".userdetail.UserDetailActivity" />
+        <activity android:name=".userlist.UserListActivity" />
     </application>
 
 </manifest>

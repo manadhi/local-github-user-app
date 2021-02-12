@@ -1,15 +1,19 @@
-package com.udhipe.githubuserex
+package com.udhipe.githubuserex.userdetail
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.udhipe.githubuserex.R
+import com.udhipe.githubuserex.userlist.UserListActivity
+import com.udhipe.githubuserex.sharedadapter.UserAdapter
 import com.udhipe.githubuserex.databinding.FragmentFollowBinding
+import com.udhipe.githubuserex.viewmodel.UserViewModel
 
 private const val ARG_SECTION = "section_number"
 
