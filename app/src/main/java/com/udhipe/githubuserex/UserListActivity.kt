@@ -128,6 +128,7 @@ class UserListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.license -> {
+                OssLicensesMenuActivity.setActivityTitle(getString(R.string.license))
                 startActivity(Intent(this, OssLicensesMenuActivity::class.java))
                 true
             }
