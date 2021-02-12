@@ -1,2 +1,3 @@
-# local-github-user-app
-Android application using local data to show several github user.
+# github-user-app-mvvm
+Android application using data from Github API to show several github user.
+This project use mvvm architecture. (check branch mvvm-network)
