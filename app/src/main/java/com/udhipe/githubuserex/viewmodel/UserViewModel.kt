@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udhipe.githubuserex.data.User
 import com.udhipe.githubuserex.network.NetworkService
-import com.udhipe.githubuserex.network.UserResponse
+import com.udhipe.githubuserex.data.UserResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,6 +20,9 @@ class UserViewModel : ViewModel() {
         const val DATA_EMPTY = "data empty"
         const val DATA_EXIST = "data exist"
     }
+
+    private val mEmptyBody = "empty body"
+    private val mNotSuccess = "not success"
 
     private val mUserService = NetworkService.getNetworkService()
     private val mUserList = MutableLiveData<ArrayList<User>>()
@@ -54,10 +57,10 @@ class UserViewModel : ViewModel() {
                             mUserListInfo.postValue(DATA_EXIST)
                         }
                     } else {
-                        mUserListInfo.postValue("empty body")
+                        mUserListInfo.postValue(mEmptyBody)
                     }
                 } else {
-                    mUserListInfo.postValue("not success")
+                    mUserListInfo.postValue(mNotSuccess)
                 }
             }
 
@@ -85,10 +88,10 @@ class UserViewModel : ViewModel() {
                             mFollowerInfo.postValue(DATA_EXIST)
                         }
                     } else {
-                        mFollowerInfo.postValue("empty body")
+                        mFollowerInfo.postValue(mEmptyBody)
                     }
                 } else {
-                    mFollowerInfo.postValue("not success")
+                    mFollowerInfo.postValue(mNotSuccess)
                 }
             }
 
@@ -116,10 +119,10 @@ class UserViewModel : ViewModel() {
                         }
 
                     } else {
-                        mFollowingInfo.postValue("empty body")
+                        mFollowingInfo.postValue(mEmptyBody)
                     }
                 } else {
-                    mFollowingInfo.postValue("not success")
+                    mFollowingInfo.postValue(mNotSuccess)
                 }
             }
 
@@ -141,7 +144,7 @@ class UserViewModel : ViewModel() {
                         mUserDetailInfo.postValue(DATA_EMPTY)
                     }
                 } else {
-                    mUserDetailInfo.postValue("not success")
+                    mUserDetailInfo.postValue(mNotSuccess)
                 }
             }
 

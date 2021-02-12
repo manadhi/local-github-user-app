@@ -131,10 +131,10 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="0dp"
+                android:layout_width="@dimen/small_0"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="@dimen/small_62"
+                android:layout_marginTop="@dimen/small_125"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_square_white_black"
                 android:orientation="vertical"
@@ -177,7 +177,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
+            android:layout_height="@dimen/large_200"
             android:layout_below="@+id/tab_layout" />
 
         <com.facebook.shimmer.ShimmerFrameLayout

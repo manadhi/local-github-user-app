@@ -11,6 +11,7 @@
 
     <dimen name="large_40">120dp</dimen>
     <dimen name="large_100">300dp</dimen>
+    <dimen name="large_200">600dp</dimen>
 
     <dimen name="subtitle_01">16sp</dimen>
     <dimen name="headline_5">24sp</dimen>

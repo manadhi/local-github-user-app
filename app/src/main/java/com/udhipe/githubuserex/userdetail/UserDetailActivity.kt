@@ -27,8 +27,6 @@ class UserDetailActivity : AppCompatActivity() {
         binding.shimmerScreen.visibility = View.VISIBLE
         binding.shimmerScreen.startShimmer()
 
-//        binding.originView.visibility = View.GONE
-
         // update
         val pagerAdapter = FollowPagerAdapter(this, supportFragmentManager)
         binding.viewPager.adapter = pagerAdapter
@@ -48,9 +46,6 @@ class UserDetailActivity : AppCompatActivity() {
 
         userViewModel.getUserDetail().observe(this, {
             if (it != null) {
-//                binding.shimmerScreen.stopShimmer()
-//                binding.shimmerScreen.visibility = View.GONE
-//                binding.originView.visibility = View.VISIBLE
                 showUserDetail(it)
             }
         })
@@ -76,7 +71,6 @@ class UserDetailActivity : AppCompatActivity() {
 
             binding.shimmerScreen.stopShimmer()
             binding.shimmerScreen.visibility = View.GONE
-//            binding.originView.visibility = View.VISIBLE
         })
 
     }

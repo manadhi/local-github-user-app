@@ -19,7 +19,7 @@ class FollowPagerAdapter(private val mContext: Context, fragmentManager: Fragmen
         return FollowFragment.newInstance(position + 2)
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return mContext.resources.getString(tabTitles[position])
     }
 }

@@ -111,18 +111,6 @@ class UserListActivity : AppCompatActivity() {
 
     }
 
-    override fun onResume() {
-        super.onResume()
-
-//        binding.shimmerScreen.startShimmer()
-    }
-
-    override fun onPause() {
-        super.onPause()
-
-//        binding.shimmerScreen.stopShimmer()
-    }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.app_menu, menu)

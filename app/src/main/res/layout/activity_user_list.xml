@@ -17,7 +17,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_github_user"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/small_0"
         android:layout_marginStart="@dimen/normal_100"
         android:layout_marginEnd="@dimen/normal_100"
         android:paddingTop="@dimen/small_100"
@@ -31,7 +31,7 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_info"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/small_0"
         android:layout_marginStart="@dimen/normal_100"
         android:layout_marginEnd="@dimen/normal_100"
         android:gravity="center"
@@ -45,7 +45,7 @@
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_screen"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/small_0"
         app:layout_constraintTop_toBottomOf="@+id/search_view"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="@dimen/normal_100"

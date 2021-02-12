@@ -61,7 +61,7 @@ class FollowFragment : Fragment() {
 
                     null, "", UserViewModel.DATA_EMPTY -> {
 
-                        var info: Int = if (index == UserViewModel.FOLLOWER_LIST) {
+                        val info: Int = if (index == UserViewModel.FOLLOWER_LIST) {
                             R.string.no_follower
                         } else {
                             R.string.no_following
