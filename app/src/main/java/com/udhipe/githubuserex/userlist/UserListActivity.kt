@@ -89,12 +89,11 @@ class UserListActivity : AppCompatActivity() {
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(keyword: String?): Boolean {
                 if (keyword != null && keyword.isNotEmpty()) {
+                    hideKeyboard(this@UserListActivity)
 
                     binding.tvInfo.visibility = View.GONE
                     binding.rvGithubUser.visibility = View.GONE
                     binding.shimmerScreen.visibility = View.VISIBLE
-
-                    hideKeyboard(this@UserListActivity)
 
                     userViewModel.setUserList(keyword)
                 }
