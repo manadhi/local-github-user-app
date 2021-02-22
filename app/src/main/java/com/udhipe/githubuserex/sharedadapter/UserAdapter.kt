@@ -19,7 +19,7 @@ class UserAdapter(
         fun onItemClick(userName: String)
     }
 
-    fun setData(newListUser: ArrayList<User>) {
+    fun setData(newListUser: List<User>) {
         listUser.clear()
         listUser.addAll(newListUser)
         notifyDataSetChanged()

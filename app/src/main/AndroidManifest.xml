@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.udhipe.githubuserex">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <queries>
         <intent>
@@ -11,21 +11,29 @@
     </queries>
 
     <application
+        android:name=".app.GithExApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_app_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubUserExplorer">
-        <activity
-            android:name=".splash.SplashActivity"
-            android:theme="@style/Theme.SplashScreen">
+        <activity android:name=".userfavorite.UserFavoriteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity-->
+<!--            android:name=".splash.SplashActivity"-->
+<!--            android:theme="@style/Theme.SplashScreen">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
         <activity android:name=".about.AboutAppActivity" />
         <activity android:name=".userdetail.UserDetailActivity" />
         <activity android:name=".userlist.UserListActivity" />
