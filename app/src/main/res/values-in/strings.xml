@@ -21,4 +21,5 @@
     <string name="something_is_wrong">Terjadi kesalahan. Silakan coba lagi nanti</string>
     <string name="no_follower">Pengguna tidak memiliki pengikut</string>
     <string name="no_following">Pengguna tidak mengikuti seorangpun</string>
+    <string name="favorite_user">Pengguna Favorit</string>
 </resources>

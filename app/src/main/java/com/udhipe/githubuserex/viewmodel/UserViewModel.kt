@@ -1,19 +1,16 @@
 package com.udhipe.githubuserex.viewmodel
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.udhipe.githubuserex.data.User
-import com.udhipe.githubuserex.data.UserRepository
 import com.udhipe.githubuserex.network.NetworkService
 import com.udhipe.githubuserex.data.UserResponse
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UserViewModel(
-    private val repository: UserRepository,
-    networkService: NetworkService?
-) : ViewModel() {
+class UserViewModel : ViewModel() {
 
     companion object {
         const val USER_LIST = 1
@@ -27,8 +24,7 @@ class UserViewModel(
     private val mEmptyBody = "empty body"
     private val mNotSuccess = "not success"
 
-    private val mUserService = networkService?.getNetworkService()
-
+    private val mUserService = NetworkService.getNetworkService()
     private val mUserList = MutableLiveData<ArrayList<User>>()
     private val mFollowerList = MutableLiveData<ArrayList<User>>()
     private val mFollowingList = MutableLiveData<ArrayList<User>>()
@@ -39,31 +35,6 @@ class UserViewModel(
     private val mFollowingInfo = MutableLiveData<String>()
     private val mKeyword = MutableLiveData<String>()
 
-    private val mFavoriteList: LiveData<List<User>> = repository.listUser.asLiveData()
-
-    /**
-     * Launching a new coroutine to manipulate the data in a non-blocking way
-     */
-    fun addUser(user: User) = viewModelScope.launch {
-        repository.addUser(user)
-    }
-
-    fun deleteUser(user: User) = viewModelScope.launch {
-        repository.deleteUser(user)
-    }
-
-    fun deleteAllUser() = viewModelScope.launch {
-        repository.deleteAllUser()
-    }
-
-    /**
-     * ======================================================================
-     */
-
-    fun getFavoriteList(): LiveData<List<User>> {
-        return mFavoriteList
-    }
-
     fun setKeyword(keyword: String) {
         mKeyword.postValue(keyword)
     }
@@ -73,7 +44,7 @@ class UserViewModel(
     }
 
     fun setUserList(userName: String) {
-        mUserService?.getUser(userName)?.enqueue(object : Callback<UserResponse> {
+        mUserService.getUser(userName).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
@@ -101,7 +72,7 @@ class UserViewModel(
     }
 
     fun setFollowerList(userName: String) {
-        mUserService?.getUserFollower(userName)?.enqueue(object : Callback<ArrayList<User>> {
+        mUserService.getUserFollower(userName).enqueue(object : Callback<ArrayList<User>> {
             override fun onResponse(
                 call: Call<ArrayList<User>>,
                 response: Response<ArrayList<User>>
@@ -131,7 +102,7 @@ class UserViewModel(
     }
 
     fun setFollowingList(userName: String) {
-        mUserService?.getUserFollowing(userName)?.enqueue(object : Callback<ArrayList<User>> {
+        mUserService.getUserFollowing(userName).enqueue(object : Callback<ArrayList<User>> {
             override fun onResponse(
                 call: Call<ArrayList<User>>,
                 response: Response<ArrayList<User>>
@@ -163,7 +134,7 @@ class UserViewModel(
     }
 
     fun setUserDetail(userName: String) {
-        mUserService?.getUserDetail(userName)?.enqueue(object : Callback<User> {
+        mUserService.getUserDetail(userName).enqueue(object : Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
@@ -206,17 +177,4 @@ class UserViewModel(
         }
     }
 
-}
-
-class UserViewModelFactory(
-    private val repository: UserRepository,
-    private val networkService: NetworkService?
-) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return UserViewModel(repository, networkService) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel class")
-    }
 }

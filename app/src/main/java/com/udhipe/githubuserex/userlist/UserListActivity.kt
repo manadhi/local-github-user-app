@@ -22,6 +22,7 @@ import com.udhipe.githubuserex.about.AboutAppActivity
 import com.udhipe.githubuserex.sharedadapter.UserAdapter
 import com.udhipe.githubuserex.databinding.ActivityUserListBinding
 import com.udhipe.githubuserex.userdetail.UserDetailActivity
+import com.udhipe.githubuserex.userfavorite.UserFavoriteActivity
 import com.udhipe.githubuserex.viewmodel.UserViewModel
 
 
@@ -132,6 +133,11 @@ class UserListActivity : AppCompatActivity() {
 
             R.id.language_setting -> {
                 startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+                true
+            }
+
+            R.id.favorite -> {
+                startActivity(Intent(this@UserListActivity, UserFavoriteActivity::class.java))
                 true
             }
 

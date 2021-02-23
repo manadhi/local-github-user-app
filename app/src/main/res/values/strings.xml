@@ -22,4 +22,5 @@
     <string name="something_is_wrong">Something is wrong. Please try again later.</string>
     <string name="no_follower">User doesn\'t have follower</string>
     <string name="no_following">User doesn\'t follow anyone</string>
+    <string name="favorite_user">Favorite User</string>
 </resources>
