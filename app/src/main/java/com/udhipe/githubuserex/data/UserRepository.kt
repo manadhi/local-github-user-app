@@ -1,9 +1,11 @@
 package com.udhipe.githubuserex.data
 
 import androidx.annotation.WorkerThread
+import com.udhipe.githubuserex.network.NetworkService
+import com.udhipe.githubuserex.network.UserService
 import kotlinx.coroutines.flow.Flow
 
-class UserRepository(private val userDao: UserDao) {
+class UserRepository(private val userDao: UserDao, private val networkservice: UserService) {
     val listUser: Flow<List<User>> = userDao.getUserListAscending()
 
     @WorkerThread
@@ -19,5 +21,10 @@ class UserRepository(private val userDao: UserDao) {
     @WorkerThread
     suspend fun deleteAllUser() {
         userDao.deleteAllUser()
+    }
+
+    @WorkerThread
+    suspend fun getOneUser(userName: String): User? {
+        return userDao.getUserByUserName(userName)
     }
 }

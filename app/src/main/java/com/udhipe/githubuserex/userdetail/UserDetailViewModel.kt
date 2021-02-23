@@ -32,6 +32,8 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
     private val mFollowerInfo = MutableLiveData<String>()
     private val mFollowingInfo = MutableLiveData<String>()
 
+    private val mIsFavorite = MutableLiveData<Boolean>()
+
     /**
      * Launching a new coroutine to manipulate the data in a non-blocking way
      */
@@ -44,7 +46,47 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
         repository.deleteUser(user)
     }
 
+    fun setUserDetail(userName: String) = viewModelScope.launch {
+        val user: User? = repository.getOneUser(userName)
+
+        if (user != null) {
+            val finalUser: User = user
+            mUserDetail.postValue(finalUser)
+            mIsFavorite.postValue(true)
+            mUserDetailInfo.postValue(DATA_EXIST)
+        } else {
+            mIsFavorite.postValue(false)
+            mUserService.getUserDetail(userName).enqueue(object : Callback<User> {
+                override fun onResponse(call: Call<User>, response: Response<User>) {
+                    if (response.isSuccessful) {
+                        if (response.body() != null) {
+                            mUserDetail.postValue(response.body())
+                            mUserDetailInfo.postValue(DATA_EXIST)
+                        } else {
+                            mUserDetailInfo.postValue(DATA_EMPTY)
+                        }
+                    } else {
+                        mUserDetailInfo.postValue(mNotSuccess)
+                    }
+                }
+
+                override fun onFailure(call: Call<User>, t: Throwable) {
+                    mUserDetailInfo.postValue(t.message)
+                }
+
+            })
+        }
+    }
+
     /** --------------------------------------------------------------------- */
+
+//    fun setFavorite(state: Boolean) {
+//        mIsFavorite.postValue(state)
+//    }
+
+    fun isFavorite(): LiveData<Boolean> {
+        return mIsFavorite
+    }
 
     fun setFollowerList(userName: String) {
         mUserService.getUserFollower(userName).enqueue(object : Callback<ArrayList<User>> {
@@ -55,9 +97,9 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
                 if (response.isSuccessful) {
                     if (response.body() != null) {
                         val followerList = response.body()
-                        mFollowerList.postValue(followerList)
+                        mFollowerList.postValue(followerList!!)
 
-                        if (followerList == null || followerList.size == 0) {
+                        if (followerList.size == 0) {
                             mFollowerInfo.postValue(DATA_EMPTY)
                         } else {
                             mFollowerInfo.postValue(DATA_EXIST)
@@ -85,9 +127,9 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
                 if (response.isSuccessful) {
                     if (response.body() != null) {
                         val followingList = response.body()
-                        mFollowingList.postValue(followingList)
+                        mFollowingList.postValue(followingList!!)
 
-                        if (followingList == null || followingList.size == 0) {
+                        if (followingList.size == 0) {
                             mFollowingInfo.postValue(DATA_EMPTY)
                         } else {
                             mFollowingInfo.postValue(DATA_EXIST)
@@ -103,28 +145,6 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
 
             override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
                 mFollowingInfo.postValue(t.message)
-            }
-
-        })
-    }
-
-    fun setUserDetail(userName: String) {
-        mUserService.getUserDetail(userName).enqueue(object : Callback<User> {
-            override fun onResponse(call: Call<User>, response: Response<User>) {
-                if (response.isSuccessful) {
-                    if (response.body() != null) {
-                        mUserDetail.postValue(response.body())
-                        mUserDetailInfo.postValue(DATA_EXIST)
-                    } else {
-                        mUserDetailInfo.postValue(DATA_EMPTY)
-                    }
-                } else {
-                    mUserDetailInfo.postValue(mNotSuccess)
-                }
-            }
-
-            override fun onFailure(call: Call<User>, t: Throwable) {
-                mUserDetailInfo.postValue(t.message)
             }
 
         })
@@ -152,7 +172,8 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
     }
 }
 
-class UserDetailViewModelFactory(private val repository: UserRepository) : ViewModelProvider.Factory {
+class UserDetailViewModelFactory(private val repository: UserRepository) :
+    ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(UserDetailViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")

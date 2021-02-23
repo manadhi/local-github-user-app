@@ -1,11 +1,13 @@
 package com.udhipe.githubuserex.userdetail
 
+import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.udhipe.githubuserex.R
@@ -89,6 +91,16 @@ class UserDetailActivity : AppCompatActivity() {
         binding.btnFavorite.setOnClickListener {
             user?.let { viewModel.addUser(it) }
         }
+
+        viewModel.isFavorite().observe(this, {
+            if (it) {
+                binding.btnFavorite.setIconTintResource(R.color.red)
+//                binding.btnFavorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite_red)
+            } else {
+                binding.btnFavorite.setIconTintResource(R.color.white)
+//                binding.btnFavorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite)
+            }
+        })
 
     }
 
