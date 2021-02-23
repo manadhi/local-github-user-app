@@ -8,6 +8,9 @@
 
     <dimen name="normal_100">16dp</dimen>
     <dimen name="normal_150">24dp</dimen>
+    <dimen name="normal_300">48dp</dimen>
+    <dimen name="normal_350">56dp</dimen>
+    <dimen name="normal_400">64dp</dimen>
 
     <dimen name="large_40">120dp</dimen>
     <dimen name="large_100">300dp</dimen>
@@ -15,5 +18,5 @@
 
     <dimen name="subtitle_01">16sp</dimen>
     <dimen name="headline_5">24sp</dimen>
-    <dimen name="normal_350">56dp</dimen>
+
 </resources>

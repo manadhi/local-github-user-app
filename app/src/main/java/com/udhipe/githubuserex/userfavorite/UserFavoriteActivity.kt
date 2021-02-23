@@ -17,7 +17,7 @@ import com.udhipe.githubuserex.userlist.UserListActivity
 
 class UserFavoriteActivity : AppCompatActivity() {
     private val viewModel: UserFavoriteViewModel by viewModels {
-        UserViewModelFactory((application as GithExApplication).repository)
+        UserFavoriteViewModelFactory((application as GithExApplication).repository)
     }
 
     private lateinit var binding: ActivityUserFavoriteBinding

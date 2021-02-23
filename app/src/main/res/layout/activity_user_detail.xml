@@ -28,6 +28,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_favorite"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="72dp"
+                android:background="@drawable/circle_grey"
+                app:icon="@drawable/ic_favorite"
+                app:layout_constraintEnd_toEndOf="@id/img_user_avatar"
+                app:layout_constraintTop_toTopOf="@id/img_user_avatar" />
+
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_name"
                 android:layout_width="@dimen/small_0"
@@ -169,9 +180,9 @@
             android:layout_marginTop="@dimen/normal_100"
             android:background="@drawable/rounded_top_square_green"
             app:tabGravity="fill"
-            app:tabMaxWidth="@dimen/small_0"
             app:tabIndicatorFullWidth="true"
             app:tabIndicatorHeight="@dimen/small_62"
+            app:tabMaxWidth="@dimen/small_0"
             app:tabSelectedTextColor="@color/primaryDarkColor" />
 
         <androidx.viewpager.widget.ViewPager
@@ -184,7 +195,7 @@
             android:id="@+id/shimmer_screen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"

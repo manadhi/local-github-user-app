@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udhipe.githubuserex.R
+import com.udhipe.githubuserex.app.GithExApplication
 import com.udhipe.githubuserex.userlist.UserListActivity
 import com.udhipe.githubuserex.sharedadapter.UserAdapter
 import com.udhipe.githubuserex.databinding.FragmentFollowBinding
@@ -18,9 +20,10 @@ import com.udhipe.githubuserex.viewmodel.UserViewModel
 private const val ARG_SECTION = "section_number"
 
 class FollowFragment : Fragment() {
+
     private var binding: FragmentFollowBinding? = null
     private lateinit var userAdapter: UserAdapter
-    private lateinit var userViewModel: UserViewModel
+    private lateinit var userViewModel: UserDetailViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,18 +45,18 @@ class FollowFragment : Fragment() {
         userViewModel = ViewModelProvider(
             requireActivity(),
             ViewModelProvider.NewInstanceFactory()
-        ).get(UserViewModel::class.java)
+        ).get(UserDetailViewModel::class.java)
 
         val index = arguments?.getInt(ARG_SECTION, 2)
 
         if (index != null) {
-            userViewModel.getUserList(index)?.observe(this, {
+            userViewModel.getUserList(index)?.observe(viewLifecycleOwner, {
                 if (it != null) {
                     userAdapter.setData(it)
                 }
             })
 
-            userViewModel.getInfo(index).observe(this, {
+            userViewModel.getInfo(index).observe(viewLifecycleOwner, {
                 when (it) {
                     UserViewModel.DATA_EXIST -> {
                         binding?.tvInfo?.visibility = View.GONE

@@ -7,7 +7,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 
 class GithExApplication : Application() {
-    private val applicationScope = CoroutineScope(SupervisorJob())
-    private val database by lazy { UserDatabase.getDatabase(this, applicationScope) }
+    private val database by lazy { UserDatabase.getDatabase(this) }
     val repository by lazy { UserRepository(database.userDao()) }
 }

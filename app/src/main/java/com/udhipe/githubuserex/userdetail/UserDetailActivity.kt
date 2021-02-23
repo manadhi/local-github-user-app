@@ -5,19 +5,29 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.udhipe.githubuserex.R
+import com.udhipe.githubuserex.app.GithExApplication
 import com.udhipe.githubuserex.data.User
 import com.udhipe.githubuserex.userlist.UserListActivity
 import com.udhipe.githubuserex.databinding.ActivityUserDetailBinding
+import com.udhipe.githubuserex.userfavorite.UserFavoriteViewModel
+import com.udhipe.githubuserex.userfavorite.UserFavoriteViewModelFactory
 import com.udhipe.githubuserex.viewmodel.UserViewModel
 
 class UserDetailActivity : AppCompatActivity() {
 
+    private val viewModel: UserDetailViewModel by viewModels {
+        UserDetailViewModelFactory((application as GithExApplication).repository)
+    }
+
     private lateinit var binding: ActivityUserDetailBinding
 
-    private lateinit var userViewModel: UserViewModel
+    private var user: User? = null
+
+//    private lateinit var viewModel: UserDetailViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,29 +42,31 @@ class UserDetailActivity : AppCompatActivity() {
         binding.viewPager.adapter = pagerAdapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)
 
-        userViewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.NewInstanceFactory()
-        ).get(UserViewModel::class.java)
+//        viewModel = ViewModelProvider(
+//            this,
+//            ViewModelProvider.NewInstanceFactory()
+//        ).get(UserViewModel::class.java)
 
         val userName = intent.getStringExtra(UserListActivity.USERNAME)
         userName?.let {
-            userViewModel.setUserDetail(it)
-            userViewModel.setFollowerList(it)
-            userViewModel.setFollowingList(it)
+            viewModel.setUserDetail(it)
+            viewModel.setFollowerList(it)
+            viewModel.setFollowingList(it)
         }
 
-        userViewModel.getUserDetail().observe(this, {
+        viewModel.getUserDetail().observe(this, {
             if (it != null) {
+                user = it
                 showUserDetail(it)
             }
         })
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        userViewModel.getInfo(UserViewModel.USER_DETAIL).observe(this, {
+        viewModel.getInfo(UserViewModel.USER_DETAIL).observe(this, {
             when (it) {
-                UserViewModel.DATA_EXIST -> {}
+                UserViewModel.DATA_EXIST -> {
+                }
 
                 null, "", UserViewModel.DATA_EMPTY -> Toast.makeText(
                     this,
@@ -73,6 +85,11 @@ class UserDetailActivity : AppCompatActivity() {
             binding.shimmerScreen.visibility = View.GONE
         })
 
+        // favorite button
+        binding.btnFavorite.setOnClickListener {
+            user?.let { viewModel.addUser(it) }
+        }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -90,12 +107,12 @@ class UserDetailActivity : AppCompatActivity() {
         supportActionBar?.title = user?.userName
 
         with(binding) {
-            tvName.text = user?.name?:"-"
+            tvName.text = user?.name ?: "-"
             tvRepository.text = user?.repository.toString()
             tvFollower.text = user?.followers.toString()
             tvFollowing.text = user?.following.toString()
-            tvCompany.text = user?.company?:"-"
-            tvLocation.text = user?.location?:"-"
+            tvCompany.text = user?.company ?: "-"
+            tvLocation.text = user?.location ?: "-"
 
             Glide.with(root.context)
                 .load(user?.avatar)

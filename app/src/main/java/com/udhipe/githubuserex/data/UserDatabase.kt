@@ -17,7 +17,7 @@ abstract class UserDatabase : RoomDatabase() {
         private var DBINSTANCE: UserDatabase? =null
         private val DBNAME = "user_database"
 
-        fun getDatabase(context: Context, scope: CoroutineScope): UserDatabase {
+        fun getDatabase(context: Context): UserDatabase {
             return DBINSTANCE ?: synchronized(this) {
                 val dbInstansce = Room.databaseBuilder(context, UserDatabase::class.java, DBNAME)
                     .build()
