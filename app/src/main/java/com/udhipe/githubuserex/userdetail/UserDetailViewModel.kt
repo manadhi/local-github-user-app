@@ -39,10 +39,12 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
      */
 
     fun addUser(user: User) = viewModelScope.launch {
+        mIsFavorite.postValue(true)
         repository.addUser(user)
     }
 
     fun deleteUser(user: User) = viewModelScope.launch {
+        mIsFavorite.postValue(false)
         repository.deleteUser(user)
     }
 

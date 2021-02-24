@@ -28,6 +28,7 @@ class UserDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserDetailBinding
 
     private var user: User? = null
+    private var isFavorite: Boolean = false
 
 //    private lateinit var viewModel: UserDetailViewModel
 
@@ -89,10 +90,16 @@ class UserDetailActivity : AppCompatActivity() {
 
         // favorite button
         binding.btnFavorite.setOnClickListener {
-            user?.let { viewModel.addUser(it) }
+            if (isFavorite) {
+                user?.let { viewModel.deleteUser(it) }
+            } else {
+                user?.let { viewModel.addUser(it) }
+            }
         }
 
         viewModel.isFavorite().observe(this, {
+            isFavorite = it
+
             if (it) {
                 binding.btnFavorite.setIconTintResource(R.color.red)
 //                binding.btnFavorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite_red)

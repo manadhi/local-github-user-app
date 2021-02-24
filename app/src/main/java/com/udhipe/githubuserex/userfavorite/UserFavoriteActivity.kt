@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udhipe.githubuserex.R
 import com.udhipe.githubuserex.app.GithExApplication
-import com.udhipe.githubuserex.data.User
 import com.udhipe.githubuserex.databinding.ActivityUserFavoriteBinding
 import com.udhipe.githubuserex.sharedadapter.UserAdapter
 import com.udhipe.githubuserex.userdetail.UserDetailActivity
@@ -31,14 +30,6 @@ class UserFavoriteActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = getString(R.string.favorite_user)
 
-        val user = User("JakaYoYo", "Jaka Y.", "Jakarta", 2, "-", 10, 50, "")
-        val user2 = User("Pakdhe", "Kuncoro", "Jawa Tengah", 5, "-", 1, 10, "")
-        val user3 = User("Thunder", "Kuncoro", "Jawa Tengah", 5, "-", 1, 10, "")
-
-//        userViewModel.addUser(user)
-//        userViewModel.addUser(user2)
-//        userViewModel.addUser(user3)
-
         binding.rvGithubUser.setHasFixedSize(true)
 
         setAdapter()
@@ -46,11 +37,6 @@ class UserFavoriteActivity : AppCompatActivity() {
         viewModel.getFavoriteList().observe(this, Observer {
             userAdapter.setData(it)
         })
-
-
-//        userViewModel.deleteUser(user)
-
-//        userViewModel.deleteAllUser()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
