@@ -9,8 +9,8 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/language_setting"
-        android:title="@string/language_setting"
+        android:id="@+id/setting"
+        android:title="@string/setting"
         app:showAsAction="never" />
 
     <item

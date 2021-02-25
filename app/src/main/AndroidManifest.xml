@@ -18,6 +18,7 @@
         android:roundIcon="@mipmap/ic_app_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GithubUserExplorer">
+        <activity android:name=".setting.SettingActivity"></activity>
         <activity android:name=".userfavorite.UserFavoriteActivity" />
         <activity
             android:name=".splash.SplashActivity"

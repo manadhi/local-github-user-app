@@ -23,4 +23,9 @@
     <string name="no_follower">User doesn\'t have follower</string>
     <string name="no_following">User doesn\'t follow anyone</string>
     <string name="favorite_user">Favorite User</string>
+    <string name="setting">Setting</string>
+    <string name="reminder_key" translatable="false">reminder</string>
+    <string name="language_key" translatable="false">language</string>
+    <string name="reminder_title">Reminder at 09:00</string>
+    <string name="language_title">Language</string>
 </resources>

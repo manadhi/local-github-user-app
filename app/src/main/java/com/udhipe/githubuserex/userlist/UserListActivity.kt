@@ -5,7 +5,6 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -21,6 +20,7 @@ import com.udhipe.githubuserex.R
 import com.udhipe.githubuserex.about.AboutAppActivity
 import com.udhipe.githubuserex.sharedadapter.UserAdapter
 import com.udhipe.githubuserex.databinding.ActivityUserListBinding
+import com.udhipe.githubuserex.setting.SettingActivity
 import com.udhipe.githubuserex.userdetail.UserDetailActivity
 import com.udhipe.githubuserex.userfavorite.UserFavoriteActivity
 import com.udhipe.githubuserex.viewmodel.UserViewModel
@@ -131,8 +131,9 @@ class UserListActivity : AppCompatActivity() {
                 true
             }
 
-            R.id.language_setting -> {
-                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+            R.id.setting -> {
+                startActivity(Intent(this, SettingActivity::class.java))
+//                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
                 true
             }
 
