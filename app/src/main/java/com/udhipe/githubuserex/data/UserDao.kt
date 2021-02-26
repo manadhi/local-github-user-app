@@ -8,6 +8,9 @@ interface UserDao {
     @Query("SELECT * FROM user_table ORDER BY userName ASC")
     fun getUserListAscending(): Flow<List<User>>
 
+    @Query("SELECT * FROM user_table ORDER BY userName ASC")
+    fun getUserListAscendingWidget(): List<User>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addUser(user: User)
 

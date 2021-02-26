@@ -8,6 +8,8 @@ import kotlinx.coroutines.flow.Flow
 class UserRepository(private val userDao: UserDao, private val networkservice: UserService) {
     val listUser: Flow<List<User>> = userDao.getUserListAscending()
 
+//    val listUserForWidget: List<User> = userDao.getUserListAscendingWidget()
+
     @WorkerThread
     suspend fun addUser(user: User) {
         userDao.addUser(user)

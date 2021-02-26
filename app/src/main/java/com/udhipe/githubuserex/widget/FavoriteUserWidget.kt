@@ -1,5 +1,6 @@
 package com.udhipe.githubuserex.widget
 
+import android.app.NotificationManager
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -7,12 +8,25 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.Drawable
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
 import android.widget.Toast
+import androidx.core.app.NotificationCompat
 import androidx.core.net.toUri
 import androidx.core.os.bundleOf
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.bumptech.glide.request.target.AppWidgetTarget
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
 import com.udhipe.githubuserex.R
+import com.udhipe.githubuserex.data.User
+import com.udhipe.githubuserex.data.UserDatabase
+import com.udhipe.githubuserex.data.UserRepository
+import com.udhipe.githubuserex.network.NetworkService
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.first
 
 /**
  * Implementation of App Widget functionality.
@@ -87,6 +101,8 @@ internal class FavoriteUserRemoteViewsFactory(private val mContext: Context) :
     RemoteViewsService.RemoteViewsFactory {
     private val mWidgetItems = ArrayList<Bitmap>()
 
+    private val mUserAvatar = ArrayList<String>()
+
     private lateinit var widgetItems: List<FavoriteUserWidget>
 
     override fun onCreate() {
@@ -94,11 +110,29 @@ internal class FavoriteUserRemoteViewsFactory(private val mContext: Context) :
     }
 
     override fun onDataSetChanged() {
-        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.star_wars_logo))
-        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.darth_vader))
-        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.falcon))
-        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.storm_trooper))
-        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.starwars))
+        // get user favorite
+        val database by lazy { UserDatabase.getDatabase(mContext) }
+        val networkService by lazy { NetworkService.getNetworkService() }
+        val repository by lazy { UserRepository(database.userDao(), networkService) }
+//        val data = repository.listUser
+
+        val data = database.userDao().getUserListAscendingWidget()
+
+        for (user: User in data) {
+            mUserAvatar.add(user.avatar)
+        }
+
+//        mWidgetItems.add(
+//            BitmapFactory.decodeResource(
+//                mContext.resources,
+//                R.drawable.star_wars_logo
+//            )
+//        )
+//
+//        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.darth_vader))
+//        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.falcon))
+//        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.storm_trooper))
+//        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.starwars))
 
 //        mWidgetItems.add(BitmapFactory.decodeResource(mContext.resources, R.drawable.ic_alarm))
 //        mWidgetItems.add(
@@ -121,11 +155,46 @@ internal class FavoriteUserRemoteViewsFactory(private val mContext: Context) :
         TODO("Not yet implemented")
     }
 
-    override fun getCount(): Int = mWidgetItems.size
+    override fun getCount(): Int = mUserAvatar.size
 
     override fun getViewAt(position: Int): RemoteViews {
         val remoteView = RemoteViews(mContext.packageName, R.layout.item_favorite_user)
-        remoteView.setImageViewBitmap(R.id.img_favorite_user, mWidgetItems[position])
+//        remoteView.setImageViewBitmap(R.id.img_favorite_user, mWidgetItems[position])
+
+//        setImage(remoteView, mContext, mUserAvatar[position])
+
+        if (mUserAvatar.size > 0) {
+            Glide.with(mContext)
+                .asBitmap()
+                .load(mUserAvatar[position])
+                .error(R.drawable.circle_grey)
+                .into(object : CustomTarget<Bitmap?>() {
+                    override fun onLoadCleared(placeholder: Drawable?) {}
+                    override fun onResourceReady(
+                        resource: Bitmap,
+                        transition: Transition<in Bitmap?>?
+                    ) {
+                        remoteView.setImageViewBitmap(R.id.img_favorite_user, resource)
+                    }
+                })
+        }
+
+//        val awt: AppWidgetTarget = object : AppWidgetTarget(
+//            mContext.applicationContext,
+//            R.id.img_favorite_user,
+//            remoteView,
+//            position
+//        ) {
+//            override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+//                super.onResourceReady(resource, transition)
+//            }
+//        }
+
+//        var options = RequestOptions().override(300, 300).placeholder(R.drawable.circle_grey).error(
+//            R.drawable.circle_grey
+//        )
+//
+//        Glide.with(mContext.applicationContext).asBitmap().load(imageUrl).apply(options).into(awt)
 
         val extras = bundleOf(
             FavoriteUserWidget.EXTRA_ITEM to position
@@ -138,6 +207,27 @@ internal class FavoriteUserRemoteViewsFactory(private val mContext: Context) :
 
         return remoteView
     }
+
+    private fun setImage(
+        remoteView: RemoteViews,
+        context: Context,
+        image: String
+    ) {
+        Glide.with(context)
+            .asBitmap()
+            .load(image)
+            .error(R.drawable.circle_grey)
+            .into(object : CustomTarget<Bitmap?>() {
+                override fun onLoadCleared(placeholder: Drawable?) {}
+                override fun onResourceReady(
+                    resource: Bitmap,
+                    transition: Transition<in Bitmap?>?
+                ) {
+                    remoteView.setImageViewBitmap(R.id.img_favorite_user, resource)
+                }
+            })
+    }
+
 
     override fun getLoadingView(): RemoteViews? = null
 
