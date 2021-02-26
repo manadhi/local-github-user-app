@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/appWidgetBackgroundColor"
+    android:padding="@dimen/widget_margin"
+    android:theme="@style/ThemeOverlay.GithubUserExplorer.AppWidgetContainer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <StackView
+            android:id="@+id/stack_favorite_user"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/small_0"
+            android:layout_weight="9" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/small_0"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/favorite_user"
+            android:textColor="@color/white"
+            android:textSize="@dimen/headline_5"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="8dp"
+        android:background="?attr/appWidgetBackgroundColor"
+        android:text="@string/no_data"
+        android:textColor="?attr/appWidgetTextColor"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+</RelativeLayout>

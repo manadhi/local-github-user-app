@@ -10,7 +10,6 @@ import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreference
 import com.udhipe.githubuserex.R
 import com.udhipe.githubuserex.utility.ReminderReceiver
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -73,13 +72,13 @@ class SettingFragment : PreferenceFragmentCompat(),
             reminderPreference.isChecked = sharedPreference?.getBoolean(mREMINDER, true)!!
 
             val reminderReciever = ReminderReceiver()
-            if (sharedPreference?.getBoolean(mREMINDER, true)!!) {
+            if (sharedPreference.getBoolean(mREMINDER, true)) {
                 // test
-                val sdf = SimpleDateFormat("HH:mm")
-                val current = Calendar.getInstance()
-                var time = sdf.format(current.time)
+//                val sdf = SimpleDateFormat("HH:mm")
+//                val current = Calendar.getInstance()
+//                var time = sdf.format(current.time)
 
-                time = "09:00"
+                val time = "09:00"
                 context?.let { reminderReciever.setReminder(it, time, "reminder") }
 
             } else {
