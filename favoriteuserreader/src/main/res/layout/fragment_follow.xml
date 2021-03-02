@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".userdetail.FollowFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_follow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/small_100"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:paddingBottom="@dimen/small_100"
+        android:visibility="gone"
+        tools:itemCount="12"
+        tools:listitem="@layout/item_github_user" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/normal_100"
+        android:gravity="center"
+        android:textSize="@dimen/subtitle_01"
+        android:visibility="gone"
+        tools:text="@string/empty_list" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/small_100"
+        android:paddingBottom="@dimen/small_100"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+            <include layout="@layout/item_github_user_shimmer" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_0">0dp</dimen>
+    <dimen name="small_37">3dp</dimen>
+    <dimen name="small_62">5dp</dimen>
+    <dimen name="small_100">8dp</dimen>
+    <dimen name="small_125">10dp</dimen>
+
+    <dimen name="normal_100">16dp</dimen>
+    <dimen name="normal_150">24dp</dimen>
+    <dimen name="normal_300">48dp</dimen>
+    <dimen name="normal_350">56dp</dimen>
+    <dimen name="normal_400">64dp</dimen>
+
+    <dimen name="large_40">120dp</dimen>
+    <dimen name="large_100">300dp</dimen>
+    <dimen name="large_200">600dp</dimen>
+
+    <dimen name="subtitle_01">16sp</dimen>
+    <dimen name="headline_5">24sp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">0dp</dimen>
+
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_github_user"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/small_100"
+    android:paddingBottom="@dimen/small_100">
+
+    <ImageView
+        android:id="@+id/img_user"
+        android:layout_width="@dimen/normal_350"
+        android:layout_height="@dimen/normal_350"
+        android:contentDescription="@string/avatar"
+        tools:src="@drawable/circle_grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_username"
+        android:layout_width="@dimen/small_0"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_100"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/headline_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_user"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Username" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

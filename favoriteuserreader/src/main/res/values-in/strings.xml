@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="developer">Dikembangkan oleh Udhi Permana</string>
+    <string name="contact_us">Hubungi Kami</string>
+    <string name="avatar">avatar</string>
+    <string name="repository">Repositori</string>
+    <string name="follower">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="company">Korporasi</string>
+    <string name="location">Lokasi</string>
+    <string name="license">Lisensi</string>
+    <string name="about">Tentang</string>
+    <string name="chooser_title">Pilih <i>Email client</i> :</string>
+    <string name="language_setting">Pengaturan Bahasa</string>
+    <string name="search">Pencarian</string>
+    <string name="search_hint">cari di sini</string>
+    <string name="copy">salin</string>
+    <string name="empty_list">Sepi di sini. Gunakan fitur pencarian untuk mendapatkan daftar pengguna</string>
+    <string name="can_not_find_user">Tidak dapat menemukan pengguna. Coba gunakan kueri pencarian lain</string>
+    <string name="can_not_find_user_detail">Tidak dapat menemukan detail pengguna</string>
+    <string name="something_is_wrong">Terjadi kesalahan. Silakan coba lagi nanti</string>
+    <string name="no_follower">Pengguna tidak memiliki pengikut</string>
+    <string name="no_following">Pengguna tidak mengikuti seorangpun</string>
+    <string name="setting">Pengaturan</string>
+    <string name="reminder_title">Pengingat jam 09:00</string>
+    <string name="language_title">Bahasa</string>
+    <string name="no_data">tidak ada data</string>
+</resources>

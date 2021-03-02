@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="pixel_4" />
+        <device id="pixel_3a" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c48bf55e-4348-49bc-8d68-9bf95b9ea025" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_ktx_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_ktx_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_3_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_ktx_1_3_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_databinding_viewbinding_4_1_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_dynamicanimation_dynamicanimation_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_2_4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_ktx_1_2_4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_ktx_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_ktx_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_ktx_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_ktx_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_savedstate_2_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_preference_preference_1_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_preference_preference_ktx_1_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_common_2_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_ktx_2_2_6_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_migration_2_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_runtime_2_2_6_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_testing_2_2_6_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_ktx_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_framework_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_facebook_shimmer_shimmer_0_5_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_oss_licenses_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_17_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_10_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_14_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_annotations_13_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_4_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_parcelize_runtime_1_4_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_4_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_4_30.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_android_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_core_jvm_1_4_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideass/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideass/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideass/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideass/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideass/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideass/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideass/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.ideass/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/provider/UserProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/androidTest/java/com/udhipe/favoriteuserreader/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/about/AboutAppActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/app/FavUserApplication.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/data/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/data/UserRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/data/UserResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/network/NetworkService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/network/UserService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userdetail/FollowFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userdetail/FollowPagerAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userdetail/UserDetailActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userdetail/UserDetailViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userfavorite/UserFavoriteActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userfavorite/UserFavoriteViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/circle_grey.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/ic_alarm.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/ic_favorite.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/ic_favorite_red.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/ic_g_explorer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/ic_language.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/rounded_square_grey.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/rounded_square_white_black.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable/rounded_top_square_green.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout/activity_about_app.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout/activity_user_detail.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout/activity_user_favorite.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout/fragment_follow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout/item_favorite_user.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout/item_github_user.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout/item_github_user_shimmer.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/values-in/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/values/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/values/styles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/favoriteuserreader/src/test/java/com/udhipe/favoriteuserreader/ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.ideass/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_29]" />
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Github User Explorer" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
+        <option value="resourceFile" />
+        <option value="Kotlin Class" />
+        <option value="Class" />
+        <option value="layoutResourceFile" />
+        <option value="valueResourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KotlinCodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ProjectId" id="1lWjTR8u3wys0H40IVdntmsOYQE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DEBUGGABLE_DEVICE" value="emulator-5554" />
+    <property name="DEBUGGABLE_PROCESS" value="com.udhipe.favoriteuserreader" />
+    <property name="DEBUGGER_ID" value="Auto" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_API_29" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-03-01T14:48:08.147Z" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="android-custom-view/Users/mac/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.2.0/13e8ff89631c2e101eb6bddd12c2fb4bbd74b15d/appcompat-1.2.0-sources.jar!/androidx/appcompat/widget/AppCompatImageView.java_SELECTED" value="AppCompatImageView" />
+    <property name="android-custom-view/Users/mac/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.2.0/13e8ff89631c2e101eb6bddd12c2fb4bbd74b15d/appcompat-1.2.0-sources.jar!/androidx/appcompat/widget/SearchView.java_SELECTED" value="SearchView" />
+    <property name="android-custom-view/Users/mac/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_SELECTED" value="RecyclerView" />
+    <property name="android-custom-view/Users/mac/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.2.1/37d55d5141066b3d118d24232fa7025b65eb3a74/material-1.2.1-sources.jar!/com/google/android/material/tabs/TabLayout.java_SELECTED" value="TabLayout" />
+    <property name="android-custom-view/Users/mac/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.3.0/b42a5159ef2c670d26ce08246ec5aaf8f92e5a42/material-1.3.0-sources.jar!/com/google/android/material/floatingactionbutton/FloatingActionButton.java_SELECTED" value="FloatingActionButton" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout" />
+    <property name="multi-representation-preview/Users/mac/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.2.0/13e8ff89631c2e101eb6bddd12c2fb4bbd74b15d/appcompat-1.2.0-sources.jar!/androidx/appcompat/widget/AppCompatImageView.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/mac/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.2.0/13e8ff89631c2e101eb6bddd12c2fb4bbd74b15d/appcompat-1.2.0-sources.jar!/androidx/appcompat/widget/SearchView.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/mac/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.1.0/f2bdf79e1977939817f54a9d3e2f6bc52b63bdd0/recyclerview-1.1.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/mac/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.2.1/37d55d5141066b3d118d24232fa7025b65eb3a74/material-1.2.1-sources.jar!/com/google/android/material/tabs/TabLayout.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/mac/.gradle/caches/modules-2/files-2.1/com.google.android.material/material/1.3.0/b42a5159ef2c670d26ce08246ec5aaf8f92e5a42/material-1.3.0-sources.jar!/com/google/android/material/floatingactionbutton/FloatingActionButton.java_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Signing Configs" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.369420521">
+      <recent name="com.udhipe.githubuserex" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.udhipe.favoriteuserreader.helper" />
+      <recent name="com.udhipe.githubuserex.userdetail" />
+    </key>
+    <key name="android.template.312292775">
+      <recent name="com.udhipe.githubuserex.userfavorite" />
+    </key>
+    <key name="android.template.591572044">
+      <recent name="com.udhipe.githubuserex.userlist" />
+    </key>
+    <key name="android.template.-307824166">
+      <recent name="com.udhipe.githubuserex.setting" />
+    </key>
+    <key name="android.template.914614527">
+      <recent name="com.udhipe.githubuserex" />
+    </key>
+    <key name="android.template.-1548208570">
+      <recent name="com.udhipe.githubuserex.userdetail" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout" />
+      <recent name="$PROJECT_DIR$/favoriteuserreader/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/favoriteuserreader/src/main/res/values" />
+      <recent name="$PROJECT_DIR$/favoriteuserreader/src/main/res" />
+      <recent name="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.udhipe.githubuserex.data" />
+      <recent name="com.udhipe.githubuserex.userlist" />
+      <recent name="com.udhipe.githubuserex.splash" />
+      <recent name="com.udhipe.githubuserex.userdetail" />
+      <recent name="com.udhipe.githubuserex.about" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.favoriteuserreader">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Github_User_Explorer.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="favoriteuserreader" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="Github_User_Explorer.favoriteuserreader" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c48bf55e-4348-49bc-8d68-9bf95b9ea025" name="Default Changelist" comment="" />
+      <created>1607719748631</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607719748631</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="240" y="77" key="#Intentions" timestamp="1612846922070">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="240" y="77" key="#Intentions/0.23.1280.777@0.23.1280.777" timestamp="1612846922070" />
+    <state x="518" y="281" key="#Notifications" timestamp="1610449785807">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="518" y="281" key="#Notifications/0.23.1280.777@0.23.1280.777" timestamp="1610449785807" />
+    <state x="33" y="34" width="1196" height="522" key="#PSD" timestamp="1614575241562">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="33" y="34" width="1196" height="522" key="#PSD/0.23.1280.777@0.23.1280.777" timestamp="1614575241562" />
+    <state x="380" y="255" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1611017103372">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="380" y="255" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.23.1280.777@0.23.1280.777" timestamp="1611017103372" />
+    <state x="419" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1614329179155">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="419" y="134" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777@0.23.1280.777" timestamp="1614329179155" />
+    <state x="328" y="154" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1613257028303">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="328" y="154" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1280.777@0.23.1280.777" timestamp="1613257028303" />
+    <state x="378" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614582419295">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="378" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.777@0.23.1280.777" timestamp="1614582419295" />
+    <state x="374" y="210" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1613104430247">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="374" y="210" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1280.777@0.23.1280.777" timestamp="1613104430247" />
+    <state x="397" y="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1610449796387">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="397" y="324" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1280.777@0.23.1280.777" timestamp="1610449796387" />
+    <state x="100" y="123" width="1080" height="577" key="AVDManager" timestamp="1614392412796">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="100" y="123" width="1080" height="577" key="AVDManager/0.23.1280.777@0.23.1280.777" timestamp="1614392412796" />
+    <state x="228" y="173" key="AndroidCreateResourceDirectoryDialog" timestamp="1614160273936">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="228" y="173" key="AndroidCreateResourceDirectoryDialog/0.23.1280.777@0.23.1280.777" timestamp="1614160273936" />
+    <state x="228" y="173" width="962" height="476" key="AndroidCreateResourceFileDialog" timestamp="1614578745952">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="228" y="173" width="962" height="476" key="AndroidCreateResourceFileDialog/0.23.1280.777@0.23.1280.777" timestamp="1614578745952" />
+    <state x="634" y="248" key="AndroidCreateXmlResourceDialog" timestamp="1614296297548">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="634" y="248" key="AndroidCreateXmlResourceDialog/0.23.1280.777@0.23.1280.777" timestamp="1614296297548" />
+    <state x="409" y="165" key="AndroidProcessChooserDialog" timestamp="1614642857903">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="409" y="165" key="AndroidProcessChooserDialog/0.23.1280.777@0.23.1280.777" timestamp="1614642857903" />
+    <state width="1236" height="266" key="GridCell.Tab.0.bottom" timestamp="1614643386653">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1236" height="266" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1614643386653" />
+    <state width="1236" height="266" key="GridCell.Tab.0.center" timestamp="1614643386652">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1236" height="266" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1614643386652" />
+    <state width="1236" height="266" key="GridCell.Tab.0.left" timestamp="1614643386652">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1236" height="266" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1614643386652" />
+    <state width="1236" height="266" key="GridCell.Tab.0.right" timestamp="1614643386652">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1236" height="266" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1614643386652" />
+    <state width="1236" height="266" key="GridCell.Tab.1.bottom" timestamp="1614643386653">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1236" height="266" key="GridCell.Tab.1.bottom/0.23.1280.777@0.23.1280.777" timestamp="1614643386653" />
+    <state width="1236" height="266" key="GridCell.Tab.1.center" timestamp="1614643386653">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1236" height="266" key="GridCell.Tab.1.center/0.23.1280.777@0.23.1280.777" timestamp="1614643386653" />
+    <state width="1236" height="266" key="GridCell.Tab.1.left" timestamp="1614643386653">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1236" height="266" key="GridCell.Tab.1.left/0.23.1280.777@0.23.1280.777" timestamp="1614643386653" />
+    <state width="1236" height="266" key="GridCell.Tab.1.right" timestamp="1614643386653">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1236" height="266" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1614643386653" />
+    <state x="228" y="161" key="IDE.errors.dialog" timestamp="1607734541660">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="228" y="161" key="IDE.errors.dialog/0.23.1280.777@0.23.1280.777" timestamp="1607734541660" />
+    <state x="193" y="38" width="900" height="722" key="SettingsEditor" timestamp="1614577763590">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="193" y="38" width="900" height="722" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1614577763590" />
+    <state width="640" height="354" key="XDebugger.FullValuePopup" timestamp="1614643127480">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="640" height="354" key="XDebugger.FullValuePopup/0.23.1280.777@0.23.1280.777" timestamp="1614643127480" />
+    <state x="417" y="196" key="chooseDestDirectoryDialog" timestamp="1614316985654">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="417" y="196" key="chooseDestDirectoryDialog/0.23.1280.777@0.23.1280.777" timestamp="1614316985654" />
+    <state x="100" y="123" width="1080" height="577" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1614323282045">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="100" y="123" width="1080" height="577" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1280.777@0.23.1280.777" timestamp="1614323282045" />
+    <state x="197" y="147" width="885" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1614436869267">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="197" y="147" width="885" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1280.777@0.23.1280.777" timestamp="1614436869267" />
+    <state x="0" y="23" width="721" height="777" key="find.popup" timestamp="1614581011489">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="0" y="23" width="721" height="777" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1614581011489" />
+    <state x="189" y="161" key="psd.add.library.dependency.panel.dimension" timestamp="1607995523914">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="189" y="161" key="psd.add.library.dependency.panel.dimension/0.23.1280.777@0.23.1280.777" timestamp="1607995523914" />
+    <state x="305" y="186" width="670" height="675" key="run.anything.popup" timestamp="1614582052890">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="305" y="186" width="670" height="675" key="run.anything.popup/0.23.1280.777@0.23.1280.777" timestamp="1614582052890" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1614302698917">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1614302698917" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>160</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>164</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>198</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>199</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>202</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>203</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>205</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>207</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>120</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>121</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>122</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>118</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserWidget.kt</url>
+          <line>113</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>56</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>55</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>58</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>83</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>59</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>65</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>66</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>67</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>68</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>69</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>70</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>71</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt</url>
+          <line>72</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt</url>
+          <line>31</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt</url>
+          <line>33</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt</url>
+          <line>35</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt</url>
+          <line>34</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt</url>
+          <line>37</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt</url>
+          <line>38</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt</url>
+          <line>28</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt</url>
+          <line>30</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Remote">
+        <watch expression="((User)((java.util.ArrayList)data).get(0)).avatar" custom="com.udhipe.githubuserex.data.User,java.util.ArrayList" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

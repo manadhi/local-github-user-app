@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.ideass/modules/Github_User_Explorer.iml" filepath="$PROJECT_DIR$/.ideass/modules/Github_User_Explorer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.ideass/modules/app/Github_User_Explorer.app.iml" filepath="$PROJECT_DIR$/.ideass/modules/app/Github_User_Explorer.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.ideass/modules/favoriteuserreader/Github_User_Explorer.favoriteuserreader.iml" filepath="$PROJECT_DIR$/.ideass/modules/favoriteuserreader/Github_User_Explorer.favoriteuserreader.iml" />
+    </modules>
+  </component>
+</project>
