@@ -6,16 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udhipe.githubuserex.R
-import com.udhipe.githubuserex.app.GithExApplication
-import com.udhipe.githubuserex.userlist.UserListActivity
-import com.udhipe.githubuserex.sharedadapter.UserAdapter
 import com.udhipe.githubuserex.databinding.FragmentFollowBinding
-import com.udhipe.githubuserex.viewmodel.UserViewModel
+import com.udhipe.githubuserex.sharedadapter.UserAdapter
+import com.udhipe.githubuserex.userlist.UserListActivity
+import com.udhipe.githubuserex.userlist.UserViewModel
 
 private const val ARG_SECTION = "section_number"
 
@@ -64,7 +62,7 @@ class FollowFragment : Fragment() {
 
                     null, "", UserViewModel.DATA_EMPTY -> {
 
-                        val info: Int = if (index == UserViewModel.FOLLOWER_LIST) {
+                        val info: Int = if (index == UserDetailViewModel.FOLLOWER_LIST) {
                             R.string.no_follower
                         } else {
                             R.string.no_following

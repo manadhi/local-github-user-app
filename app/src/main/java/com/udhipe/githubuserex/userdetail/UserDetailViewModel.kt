@@ -4,8 +4,6 @@ import androidx.lifecycle.*
 import com.udhipe.githubuserex.data.User
 import com.udhipe.githubuserex.data.UserRepository
 import com.udhipe.githubuserex.network.NetworkService
-import com.udhipe.githubuserex.userfavorite.UserFavoriteViewModel
-import com.udhipe.githubuserex.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -154,8 +152,8 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
 
     fun getUserList(category: Int): LiveData<ArrayList<User>>? {
         return when (category) {
-            UserViewModel.FOLLOWER_LIST -> mFollowerList
-            UserViewModel.FOLLOWING_LIST -> mFollowingList
+            FOLLOWER_LIST -> mFollowerList
+            FOLLOWING_LIST -> mFollowingList
             else -> null
         }
     }
@@ -169,6 +167,7 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
         return when (category) {
             FOLLOWER_LIST -> mFollowerInfo
             FOLLOWING_LIST -> mFollowingInfo
+            USER_DETAIL -> mUserDetailInfo
             else -> mUserDetailInfo
         }
     }

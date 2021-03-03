@@ -18,12 +18,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.udhipe.githubuserex.R
 import com.udhipe.githubuserex.about.AboutAppActivity
-import com.udhipe.githubuserex.sharedadapter.UserAdapter
 import com.udhipe.githubuserex.databinding.ActivityUserListBinding
 import com.udhipe.githubuserex.setting.SettingActivity
+import com.udhipe.githubuserex.sharedadapter.UserAdapter
 import com.udhipe.githubuserex.userdetail.UserDetailActivity
 import com.udhipe.githubuserex.userfavorite.UserFavoriteActivity
-import com.udhipe.githubuserex.viewmodel.UserViewModel
 
 
 class UserListActivity : AppCompatActivity() {

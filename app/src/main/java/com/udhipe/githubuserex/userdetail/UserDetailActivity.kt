@@ -1,23 +1,18 @@
 package com.udhipe.githubuserex.userdetail
 
-import android.content.res.ColorStateList
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.core.content.ContextCompat
-import androidx.lifecycle.ViewModelProvider
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.udhipe.githubuserex.R
 import com.udhipe.githubuserex.app.GithExApplication
 import com.udhipe.githubuserex.data.User
-import com.udhipe.githubuserex.userlist.UserListActivity
 import com.udhipe.githubuserex.databinding.ActivityUserDetailBinding
-import com.udhipe.githubuserex.userfavorite.UserFavoriteViewModel
-import com.udhipe.githubuserex.userfavorite.UserFavoriteViewModelFactory
-import com.udhipe.githubuserex.viewmodel.UserViewModel
+import com.udhipe.githubuserex.userlist.UserListActivity
+import com.udhipe.githubuserex.userlist.UserViewModel
 
 class UserDetailActivity : AppCompatActivity() {
 
@@ -29,8 +24,6 @@ class UserDetailActivity : AppCompatActivity() {
 
     private var user: User? = null
     private var isFavorite: Boolean = false
-
-//    private lateinit var viewModel: UserDetailViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,11 +37,6 @@ class UserDetailActivity : AppCompatActivity() {
         val pagerAdapter = FollowPagerAdapter(this, supportFragmentManager)
         binding.viewPager.adapter = pagerAdapter
         binding.tabLayout.setupWithViewPager(binding.viewPager)
-
-//        viewModel = ViewModelProvider(
-//            this,
-//            ViewModelProvider.NewInstanceFactory()
-//        ).get(UserViewModel::class.java)
 
         val userName = intent.getStringExtra(UserListActivity.USERNAME)
         userName?.let {
@@ -66,7 +54,7 @@ class UserDetailActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        viewModel.getInfo(UserViewModel.USER_DETAIL).observe(this, {
+        viewModel.getInfo(UserDetailViewModel.USER_DETAIL).observe(this, {
             when (it) {
                 UserViewModel.DATA_EXIST -> {
                 }
