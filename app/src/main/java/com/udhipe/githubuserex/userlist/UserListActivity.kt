@@ -11,13 +11,14 @@ import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.udhipe.githubuserex.R
 import com.udhipe.githubuserex.about.AboutAppActivity
+import com.udhipe.githubuserex.app.GithExApplication
 import com.udhipe.githubuserex.databinding.ActivityUserListBinding
 import com.udhipe.githubuserex.setting.SettingActivity
 import com.udhipe.githubuserex.sharedadapter.UserAdapter
@@ -27,10 +28,14 @@ import com.udhipe.githubuserex.userfavorite.UserFavoriteActivity
 
 class UserListActivity : AppCompatActivity() {
 
+    private val userViewModel: UserViewModel by viewModels {
+        UserViewModel.UserViewModelFactory((application as GithExApplication).repository)
+    }
+
     private lateinit var binding: ActivityUserListBinding
     private lateinit var userAdapter: UserAdapter
 
-    private lateinit var userViewModel: UserViewModel
+//    private lateinit var userViewModel: UserViewModel
 
     companion object {
         const val USERNAME = "userName"
@@ -43,10 +48,10 @@ class UserListActivity : AppCompatActivity() {
 
         binding.rvGithubUser.setHasFixedSize(true)
 
-        userViewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.NewInstanceFactory()
-        ).get(UserViewModel::class.java)
+//        userViewModel = ViewModelProvider(
+//            this,
+//            ViewModelProvider.NewInstanceFactory()
+//        ).get(UserViewModel::class.java)
 
         setAdapter()
 

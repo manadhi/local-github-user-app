@@ -3,14 +3,14 @@ package com.udhipe.githubuserex.userlist
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.udhipe.githubuserex.data.User
-import com.udhipe.githubuserex.data.UserResponse
+import com.udhipe.githubuserex.data.UserRepository
 import com.udhipe.githubuserex.network.NetworkService
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
-class UserViewModel : ViewModel() {
+class UserViewModel(
+    private val repository: UserRepository
+) : ViewModel() {
 
     companion object {
         const val USER_LIST = 1
@@ -36,7 +36,25 @@ class UserViewModel : ViewModel() {
     }
 
     fun setUserList(userName: String) {
-        mUserService.getUser(userName).enqueue(object : Callback<UserResponse> {
+        repository.getUserbyUsername(userName, object : UserRepository.Listener<ArrayList<User>> {
+            override fun onSuccess(data: ArrayList<User>, message: String) {
+                mUserList.postValue(data)
+                mUserListInfo.postValue(DATA_EXIST)
+            }
+
+            override fun onError(message: String) {
+                if (message.equals("empty data", true)) {
+                    mUserListInfo.postValue(DATA_EMPTY)
+                } else {
+                    mUserListInfo.postValue(message)
+                }
+            }
+
+        })
+
+
+
+/*        mUserService.getUser(userName).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
@@ -60,7 +78,7 @@ class UserViewModel : ViewModel() {
                 mUserListInfo.postValue(t.message)
             }
 
-        })
+        })*/
     }
 
     fun getUserList(category: Int): LiveData<ArrayList<User>>? {
@@ -74,6 +92,16 @@ class UserViewModel : ViewModel() {
         return when (category) {
             USER_LIST -> mUserListInfo
             else -> mUserDetailInfo
+        }
+    }
+
+    class UserViewModelFactory(private val repository: UserRepository) : ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
+                @Suppress("UNCHECKED_CAST")
+                return UserViewModel(repository) as T
+            }
+            throw IllegalArgumentException("Unknown ViewModel class")
         }
     }
 
