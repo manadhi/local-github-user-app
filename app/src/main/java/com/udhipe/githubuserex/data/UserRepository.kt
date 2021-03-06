@@ -21,6 +21,8 @@ class UserRepository(private val userDao: UserDao, private val networkservice: U
     lateinit var listUserByUsername: ArrayList<User>
     lateinit var listUserInfo: String
 
+    private val mSuccess = "success"
+    private val mEmptyData = "empty data"
     private val mEmptyBody = "empty body"
     private val mNotSuccess = "not success"
 
@@ -61,32 +63,20 @@ class UserRepository(private val userDao: UserDao, private val networkservice: U
                         val userList = response.body()?.items
 
                         if (userList == null || userList.size == 0) {
-//                            mUserListInfo.postValue(UserViewModel.DATA_EMPTY)
-//                            listUserInfo = "empty data"
-                            listener.onError("empty data")
+                            listener.onError(mEmptyData)
                         } else {
-//                            listUserInfo = "success"
-//                            listUserByUsername = userList
-                            listener.onSuccess(userList, "success")
-//                            mUserList.postValue(userList!!)
-//                            mUserListInfo.postValue(UserViewModel.DATA_EXIST)
+                            listener.onSuccess(userList, mSuccess)
                         }
                     } else {
-//                        listUserInfo = "empty body"
-                        listener.onError("empty body")
-//                        mUserListInfo.postValue(mEmptyBody)
+                        listener.onError(mEmptyBody)
                     }
                 } else {
-                    listener.onError("not success")
-//                    listUserInfo = "not success"
-//                    mUserListInfo.postValue(mNotSuccess)
+                    listener.onError(mNotSuccess)
                 }
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-//                listUserInfo = t.message.toString()
                 t.message?.let { listener.onError(it) }
-//                mUserListInfo.postValue(t.message)
             }
 
         })
@@ -96,14 +86,9 @@ class UserRepository(private val userDao: UserDao, private val networkservice: U
         val user: User? = getOneUser(userName)
 
         if (user != null) {
-            listener.onSuccess(user, "success")
-//            mUserDetail.postValue(finalUser)
-//            mIsFavorite.postValue(true)
-//            mUserDetailInfo.postValue(UserDetailViewModel.DATA_EXIST)
+            listener.onSuccess(user, mSuccess)
         } else {
-//            mIsFavorite.postValue(false)
             getUserDetailRemote(userName, listener)
-//            listener.onSuccess(user, "success")
         }
     }
 
@@ -115,22 +100,77 @@ class UserRepository(private val userDao: UserDao, private val networkservice: U
                 if (response.isSuccessful) {
                     if (response.body() != null) {
                         user = response.body()!!
-                        listener.onSuccess(user, "success")
-//                            mUserDetail.postValue(response.body())
-//                            mUserDetailInfo.postValue(UserDetailViewModel.DATA_EXIST)
+                        listener.onSuccess(user, mSuccess)
                     } else {
-                        listener.onError("empty body")
-//                            mUserDetailInfo.postValue(UserDetailViewModel.DATA_EMPTY)
+                        listener.onError(mEmptyBody)
                     }
                 } else {
-                    listener.onError("not successful")
-//                        mUserDetailInfo.postValue(mNotSuccess)
+                    listener.onError(mNotSuccess)
                 }
             }
 
             override fun onFailure(call: Call<User>, t: Throwable) {
                 listener.onError(t.message.toString())
-//                    mUserDetailInfo.postValue(t.message)
+            }
+
+        })
+    }
+
+    fun getFollowerListByUsername(userName: String, listener: Listener<ArrayList<User>>) {
+        networkservice.getUserFollower(userName).enqueue(object : Callback<ArrayList<User>> {
+            override fun onResponse(
+                call: Call<ArrayList<User>>,
+                response: Response<ArrayList<User>>
+            ) {
+                if (response.isSuccessful) {
+                    if (response.body() != null) {
+                        val followerList = response.body()
+
+                        listener.onSuccess(followerList!!, mSuccess)
+
+                        if (followerList.size == 0) {
+                            listener.onError(mEmptyData)
+                        }
+
+                    } else {
+                        listener.onError(mEmptyBody)
+                    }
+                } else {
+                    listener.onError(mNotSuccess)
+                }
+            }
+
+            override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
+                listener.onError(t.message.toString())
+            }
+        })
+    }
+
+    fun getFollowingListByUsername(userName: String, listener: Listener<ArrayList<User>>) {
+        networkservice.getUserFollowing(userName).enqueue(object : Callback<ArrayList<User>> {
+            override fun onResponse(
+                call: Call<ArrayList<User>>,
+                response: Response<ArrayList<User>>
+            ) {
+                if (response.isSuccessful) {
+                    if (response.body() != null) {
+                        val followingList = response.body()
+                        listener.onSuccess(followingList!!, mSuccess)
+
+                        if (followingList.size == 0) {
+                            listener.onError(mEmptyData)
+                        }
+
+                    } else {
+                        listener.onError(mEmptyBody)
+                    }
+                } else {
+                    listener.onError(mNotSuccess)
+                }
+            }
+
+            override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
+                listener.onError(t.message.toString())
             }
 
         })

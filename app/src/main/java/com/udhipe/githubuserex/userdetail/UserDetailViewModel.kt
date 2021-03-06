@@ -4,10 +4,8 @@ import androidx.lifecycle.*
 import com.udhipe.githubuserex.data.User
 import com.udhipe.githubuserex.data.UserRepository
 import com.udhipe.githubuserex.network.NetworkService
+import com.udhipe.githubuserex.userlist.UserViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class UserDetailViewModel(private val repository: UserRepository) : ViewModel() {
 
@@ -71,109 +69,51 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
             }
 
         });
-
-
-//        val user: User? = repository.getOneUser(userName)
-//
-//        if (user != null) {
-//            val finalUser: User = user
-//            mUserDetail.postValue(finalUser)
-//            mIsFavorite.postValue(true)
-//            mUserDetailInfo.postValue(DATA_EXIST)
-//        } else {
-//            mIsFavorite.postValue(false)
-//            mUserService.getUserDetail(userName).enqueue(object : Callback<User> {
-//                override fun onResponse(call: Call<User>, response: Response<User>) {
-//                    if (response.isSuccessful) {
-//                        if (response.body() != null) {
-//                            mUserDetail.postValue(response.body())
-//                            mUserDetailInfo.postValue(DATA_EXIST)
-//                        } else {
-//                            mUserDetailInfo.postValue(DATA_EMPTY)
-//                        }
-//                    } else {
-//                        mUserDetailInfo.postValue(mNotSuccess)
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<User>, t: Throwable) {
-//                    mUserDetailInfo.postValue(t.message)
-//                }
-//
-//            })
-//        }
     }
 
     /** --------------------------------------------------------------------- */
-
-//    fun setFavorite(state: Boolean) {
-//        mIsFavorite.postValue(state)
-//    }
 
     fun isFavorite(): LiveData<Boolean> {
         return mIsFavorite
     }
 
     fun setFollowerList(userName: String) {
-        mUserService.getUserFollower(userName).enqueue(object : Callback<ArrayList<User>> {
-            override fun onResponse(
-                call: Call<ArrayList<User>>,
-                response: Response<ArrayList<User>>
-            ) {
-                if (response.isSuccessful) {
-                    if (response.body() != null) {
-                        val followerList = response.body()
-                        mFollowerList.postValue(followerList!!)
-
-                        if (followerList.size == 0) {
-                            mFollowerInfo.postValue(DATA_EMPTY)
-                        } else {
-                            mFollowerInfo.postValue(DATA_EXIST)
-                        }
-                    } else {
-                        mFollowerInfo.postValue(mEmptyBody)
-                    }
-                } else {
-                    mFollowerInfo.postValue(mNotSuccess)
+        repository.getFollowerListByUsername(
+            userName,
+            object : UserRepository.Listener<ArrayList<User>> {
+                override fun onSuccess(data: ArrayList<User>, message: String) {
+                    mFollowerList.postValue(data)
+                    mFollowerInfo.postValue(UserViewModel.DATA_EXIST)
                 }
-            }
 
-            override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
-                mFollowerInfo.postValue(t.message)
-            }
-        })
+                override fun onError(message: String) {
+                    if (message.equals("empty data", true)) {
+                        mFollowerInfo.postValue(UserViewModel.DATA_EMPTY)
+                    } else {
+                        mFollowerInfo.postValue(message)
+                    }
+                }
+            })
     }
 
     fun setFollowingList(userName: String) {
-        mUserService.getUserFollowing(userName).enqueue(object : Callback<ArrayList<User>> {
-            override fun onResponse(
-                call: Call<ArrayList<User>>,
-                response: Response<ArrayList<User>>
-            ) {
-                if (response.isSuccessful) {
-                    if (response.body() != null) {
-                        val followingList = response.body()
-                        mFollowingList.postValue(followingList!!)
-
-                        if (followingList.size == 0) {
-                            mFollowingInfo.postValue(DATA_EMPTY)
-                        } else {
-                            mFollowingInfo.postValue(DATA_EXIST)
-                        }
-
-                    } else {
-                        mFollowingInfo.postValue(mEmptyBody)
-                    }
-                } else {
-                    mFollowingInfo.postValue(mNotSuccess)
+        repository.getFollowingListByUsername(
+            userName,
+            object : UserRepository.Listener<ArrayList<User>> {
+                override fun onSuccess(data: ArrayList<User>, message: String) {
+                    mFollowingList.postValue(data)
+                    mFollowingInfo.postValue(UserViewModel.DATA_EXIST)
                 }
-            }
 
-            override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
-                mFollowingInfo.postValue(t.message)
-            }
+                override fun onError(message: String) {
+                    if (message.equals("empty data", true)) {
+                        mFollowingInfo.postValue(UserViewModel.DATA_EMPTY)
+                    } else {
+                        mFollowingInfo.postValue(message)
+                    }
+                }
 
-        })
+            })
     }
 
     fun getUserList(category: Int): LiveData<ArrayList<User>>? {

@@ -16,11 +16,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c48bf55e-4348-49bc-8d68-9bf95b9ea025" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserDatabase.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userlist/UserViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userlist/UserViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,10 +303,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="380" y="255" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.23.1280.777@0.23.1280.777" timestamp="1611017103372" />
-    <state x="419" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1614996591999">
+    <state x="419" y="134" key="#com.intellij.ide.util.MemberChooser" timestamp="1615071986507">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="419" y="134" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777@0.23.1280.777" timestamp="1614996591999" />
+    <state x="419" y="134" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777@0.23.1280.777" timestamp="1615071986507" />
     <state x="328" y="154" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1613257028303">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -346,22 +343,22 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="409" y="165" key="AndroidProcessChooserDialog/0.23.1280.777@0.23.1280.777" timestamp="1615033569642" />
-    <state width="1236" height="387" key="GridCell.Tab.0.bottom" timestamp="1615034531137">
+    <state width="1236" height="387" key="GridCell.Tab.0.bottom" timestamp="1615071547131">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1236" height="387" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1615034531137" />
-    <state width="1236" height="387" key="GridCell.Tab.0.center" timestamp="1615034531137">
+    <state width="1236" height="387" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1615071547131" />
+    <state width="1236" height="387" key="GridCell.Tab.0.center" timestamp="1615071547131">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1236" height="387" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1615034531137" />
-    <state width="1236" height="387" key="GridCell.Tab.0.left" timestamp="1615034531136">
+    <state width="1236" height="387" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1615071547131" />
+    <state width="1236" height="387" key="GridCell.Tab.0.left" timestamp="1615071547130">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1236" height="387" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1615034531136" />
-    <state width="1236" height="387" key="GridCell.Tab.0.right" timestamp="1615034531137">
+    <state width="1236" height="387" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1615071547130" />
+    <state width="1236" height="387" key="GridCell.Tab.0.right" timestamp="1615071547131">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1236" height="387" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1615034531137" />
+    <state width="1236" height="387" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1615071547131" />
     <state width="1236" height="266" key="GridCell.Tab.1.bottom" timestamp="1615034365704">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -398,10 +395,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="100" y="123" width="1080" height="577" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1280.777@0.23.1280.777" timestamp="1614323282045" />
-    <state x="197" y="147" width="885" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1615033561757">
+    <state x="197" y="147" width="885" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1615068508290">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="197" y="147" width="885" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1280.777@0.23.1280.777" timestamp="1615033561757" />
+    <state x="197" y="147" width="885" height="617" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.23.1280.777@0.23.1280.777" timestamp="1615068508290" />
     <state x="0" y="23" width="721" height="777" key="find.popup" timestamp="1614581011489">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -420,40 +417,6 @@
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1614302698917" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt</url>
-          <line>39</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt</url>
-          <line>40</line>
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt</url>
-          <line>41</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt</url>
-          <line>45</line>
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt</url>
-          <line>46</line>
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt</url>
-          <line>47</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Remote">
         <watch expression="((User)((java.util.ArrayList)data).get(0)).avatar" custom="com.udhipe.githubuserex.data.User,java.util.ArrayList" />
