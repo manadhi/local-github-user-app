@@ -17,7 +17,9 @@
     <list default="true" id="c48bf55e-4348-49bc-8d68-9bf95b9ea025" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_favorite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_favorite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_list.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,22 +345,22 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="409" y="165" key="AndroidProcessChooserDialog/0.23.1280.777@0.23.1280.777" timestamp="1615033569642" />
-    <state width="1236" height="387" key="GridCell.Tab.0.bottom" timestamp="1615071547131">
+    <state width="1236" height="387" key="GridCell.Tab.0.bottom" timestamp="1615072470936">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1236" height="387" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1615071547131" />
-    <state width="1236" height="387" key="GridCell.Tab.0.center" timestamp="1615071547131">
+    <state width="1236" height="387" key="GridCell.Tab.0.bottom/0.23.1280.777@0.23.1280.777" timestamp="1615072470936" />
+    <state width="1236" height="387" key="GridCell.Tab.0.center" timestamp="1615072470935">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1236" height="387" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1615071547131" />
-    <state width="1236" height="387" key="GridCell.Tab.0.left" timestamp="1615071547130">
+    <state width="1236" height="387" key="GridCell.Tab.0.center/0.23.1280.777@0.23.1280.777" timestamp="1615072470935" />
+    <state width="1236" height="387" key="GridCell.Tab.0.left" timestamp="1615072470935">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1236" height="387" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1615071547130" />
-    <state width="1236" height="387" key="GridCell.Tab.0.right" timestamp="1615071547131">
+    <state width="1236" height="387" key="GridCell.Tab.0.left/0.23.1280.777@0.23.1280.777" timestamp="1615072470935" />
+    <state width="1236" height="387" key="GridCell.Tab.0.right" timestamp="1615072470935">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state width="1236" height="387" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1615071547131" />
+    <state width="1236" height="387" key="GridCell.Tab.0.right/0.23.1280.777@0.23.1280.777" timestamp="1615072470935" />
     <state width="1236" height="266" key="GridCell.Tab.1.bottom" timestamp="1615034365704">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

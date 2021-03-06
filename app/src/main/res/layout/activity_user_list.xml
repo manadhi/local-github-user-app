@@ -48,8 +48,6 @@
         android:layout_height="@dimen/small_0"
         app:layout_constraintTop_toBottomOf="@+id/search_view"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="@dimen/normal_100"
-        android:layout_marginEnd="@dimen/normal_100"
         android:paddingTop="@dimen/small_100"
         android:paddingBottom="@dimen/small_100"
         android:visibility="gone">

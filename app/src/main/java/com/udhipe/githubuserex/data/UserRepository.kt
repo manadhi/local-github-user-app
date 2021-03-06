@@ -8,7 +8,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class UserRepository(private val userDao: UserDao, private val networkservice: UserService) {
+class UserRepository(private val userDao: UserDao, private val networkService: UserService) {
     val listUser: Flow<List<User>> = userDao.getUserListAscending()
 
 
@@ -56,7 +56,7 @@ class UserRepository(private val userDao: UserDao, private val networkservice: U
 
     // get data from web service
     fun getUserbyUsername(userName: String, listener: Listener<ArrayList<User>>) {
-        networkservice.getUser(userName).enqueue(object : Callback<UserResponse> {
+        networkService.getUser(userName).enqueue(object : Callback<UserResponse> {
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
@@ -95,7 +95,7 @@ class UserRepository(private val userDao: UserDao, private val networkservice: U
     private fun getUserDetailRemote(userName: String, listener: Listener<User>) {
         lateinit var user: User
 
-        networkservice.getUserDetail(userName).enqueue(object : Callback<User> {
+        networkService.getUserDetail(userName).enqueue(object : Callback<User> {
             override fun onResponse(call: Call<User>, response: Response<User>) {
                 if (response.isSuccessful) {
                     if (response.body() != null) {
@@ -117,7 +117,7 @@ class UserRepository(private val userDao: UserDao, private val networkservice: U
     }
 
     fun getFollowerListByUsername(userName: String, listener: Listener<ArrayList<User>>) {
-        networkservice.getUserFollower(userName).enqueue(object : Callback<ArrayList<User>> {
+        networkService.getUserFollower(userName).enqueue(object : Callback<ArrayList<User>> {
             override fun onResponse(
                 call: Call<ArrayList<User>>,
                 response: Response<ArrayList<User>>
@@ -147,7 +147,7 @@ class UserRepository(private val userDao: UserDao, private val networkservice: U
     }
 
     fun getFollowingListByUsername(userName: String, listener: Listener<ArrayList<User>>) {
-        networkservice.getUserFollowing(userName).enqueue(object : Callback<ArrayList<User>> {
+        networkService.getUserFollowing(userName).enqueue(object : Callback<ArrayList<User>> {
             override fun onResponse(
                 call: Call<ArrayList<User>>,
                 response: Response<ArrayList<User>>
