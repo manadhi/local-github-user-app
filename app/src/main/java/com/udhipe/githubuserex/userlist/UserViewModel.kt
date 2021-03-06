@@ -51,34 +51,6 @@ class UserViewModel(
             }
 
         })
-
-
-
-/*        mUserService.getUser(userName).enqueue(object : Callback<UserResponse> {
-            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
-                if (response.isSuccessful) {
-                    if (response.body() != null) {
-                        val userList = response.body()?.items
-
-                        if (userList == null || userList.size == 0) {
-                            mUserListInfo.postValue(DATA_EMPTY)
-                        } else {
-                            mUserList.postValue(userList!!)
-                            mUserListInfo.postValue(DATA_EXIST)
-                        }
-                    } else {
-                        mUserListInfo.postValue(mEmptyBody)
-                    }
-                } else {
-                    mUserListInfo.postValue(mNotSuccess)
-                }
-            }
-
-            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                mUserListInfo.postValue(t.message)
-            }
-
-        })*/
     }
 
     fun getUserList(category: Int): LiveData<ArrayList<User>>? {

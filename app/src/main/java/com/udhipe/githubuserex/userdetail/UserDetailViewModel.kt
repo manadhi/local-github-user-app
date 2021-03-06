@@ -37,45 +37,71 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
      */
 
     fun addUser(user: User) = viewModelScope.launch {
+        user.isFavorite = 1
         mIsFavorite.postValue(true)
         repository.addUser(user)
     }
 
     fun deleteUser(user: User) = viewModelScope.launch {
+        user.isFavorite = 0
         mIsFavorite.postValue(false)
         repository.deleteUser(user)
     }
 
     fun setUserDetail(userName: String) = viewModelScope.launch {
-        val user: User? = repository.getOneUser(userName)
+        repository.getUserDetailByUsername(userName, object : UserRepository.Listener<User> {
+            override fun onSuccess(data: User, message: String) {
+                mUserDetail.postValue(data)
 
-        if (user != null) {
-            val finalUser: User = user
-            mUserDetail.postValue(finalUser)
-            mIsFavorite.postValue(true)
-            mUserDetailInfo.postValue(DATA_EXIST)
-        } else {
-            mIsFavorite.postValue(false)
-            mUserService.getUserDetail(userName).enqueue(object : Callback<User> {
-                override fun onResponse(call: Call<User>, response: Response<User>) {
-                    if (response.isSuccessful) {
-                        if (response.body() != null) {
-                            mUserDetail.postValue(response.body())
-                            mUserDetailInfo.postValue(DATA_EXIST)
-                        } else {
-                            mUserDetailInfo.postValue(DATA_EMPTY)
-                        }
-                    } else {
-                        mUserDetailInfo.postValue(mNotSuccess)
-                    }
+                if (data.isFavorite == 0) {
+                    mIsFavorite.postValue(false)
+                } else {
+                    mIsFavorite.postValue(true)
                 }
 
-                override fun onFailure(call: Call<User>, t: Throwable) {
-                    mUserDetailInfo.postValue(t.message)
-                }
+                mUserDetailInfo.postValue(DATA_EXIST)
+            }
 
-            })
-        }
+            override fun onError(message: String) {
+                if (message.equals("empty body", true)) {
+                    mUserDetailInfo.postValue(DATA_EMPTY)
+                } else {
+                    mUserDetailInfo.postValue(message)
+                }
+            }
+
+        });
+
+
+//        val user: User? = repository.getOneUser(userName)
+//
+//        if (user != null) {
+//            val finalUser: User = user
+//            mUserDetail.postValue(finalUser)
+//            mIsFavorite.postValue(true)
+//            mUserDetailInfo.postValue(DATA_EXIST)
+//        } else {
+//            mIsFavorite.postValue(false)
+//            mUserService.getUserDetail(userName).enqueue(object : Callback<User> {
+//                override fun onResponse(call: Call<User>, response: Response<User>) {
+//                    if (response.isSuccessful) {
+//                        if (response.body() != null) {
+//                            mUserDetail.postValue(response.body())
+//                            mUserDetailInfo.postValue(DATA_EXIST)
+//                        } else {
+//                            mUserDetailInfo.postValue(DATA_EMPTY)
+//                        }
+//                    } else {
+//                        mUserDetailInfo.postValue(mNotSuccess)
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<User>, t: Throwable) {
+//                    mUserDetailInfo.postValue(t.message)
+//                }
+//
+//            })
+//        }
     }
 
     /** --------------------------------------------------------------------- */

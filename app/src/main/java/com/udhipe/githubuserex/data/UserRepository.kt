@@ -92,4 +92,49 @@ class UserRepository(private val userDao: UserDao, private val networkservice: U
         })
     }
 
+    suspend fun getUserDetailByUsername(userName: String, listener: Listener<User>) {
+        val user: User? = getOneUser(userName)
+
+        if (user != null) {
+            listener.onSuccess(user, "success")
+//            mUserDetail.postValue(finalUser)
+//            mIsFavorite.postValue(true)
+//            mUserDetailInfo.postValue(UserDetailViewModel.DATA_EXIST)
+        } else {
+//            mIsFavorite.postValue(false)
+            getUserDetailRemote(userName, listener)
+//            listener.onSuccess(user, "success")
+        }
+    }
+
+    private fun getUserDetailRemote(userName: String, listener: Listener<User>) {
+        lateinit var user: User
+
+        networkservice.getUserDetail(userName).enqueue(object : Callback<User> {
+            override fun onResponse(call: Call<User>, response: Response<User>) {
+                if (response.isSuccessful) {
+                    if (response.body() != null) {
+                        user = response.body()!!
+                        listener.onSuccess(user, "success")
+//                            mUserDetail.postValue(response.body())
+//                            mUserDetailInfo.postValue(UserDetailViewModel.DATA_EXIST)
+                    } else {
+                        listener.onError("empty body")
+//                            mUserDetailInfo.postValue(UserDetailViewModel.DATA_EMPTY)
+                    }
+                } else {
+                    listener.onError("not successful")
+//                        mUserDetailInfo.postValue(mNotSuccess)
+                }
+            }
+
+            override fun onFailure(call: Call<User>, t: Throwable) {
+                listener.onError(t.message.toString())
+//                    mUserDetailInfo.postValue(t.message)
+            }
+
+        })
+    }
+
+
 }
