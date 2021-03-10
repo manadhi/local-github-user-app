@@ -8,9 +8,7 @@ import com.udhipe.favoriteuserreader.R
 import com.udhipe.favoriteuserreader.data.User
 import com.udhipe.favoriteuserreader.databinding.ItemGithubUserBinding
 
-class UserAdapter(
-    private var onItemClickCallBack: OnItemClickCallback
-) :
+class UserAdapter :
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     private var listUser = arrayListOf<User>()
@@ -36,7 +34,7 @@ class UserAdapter(
                     .into(imgUser)
 
                 tvUsername.text = user.userName
-                itemGithubUser.setOnClickListener { onItemClickCallBack.onItemClick(user.userName) }
+//                itemGithubUser.setOnClickListener { onItemClickCallBack.onItemClick(user.userName) }
             }
         }
     }

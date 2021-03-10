@@ -103,7 +103,7 @@ class FollowFragment : Fragment() {
 
         binding?.rvFollow?.setHasFixedSize(true)
         binding?.rvFollow?.layoutManager = LinearLayoutManager(context)
-        userAdapter = UserAdapter(onItemCallBack)
+//        userAdapter = UserAdapter(onItemCallBack)
         binding?.rvFollow?.adapter = userAdapter
     }
 

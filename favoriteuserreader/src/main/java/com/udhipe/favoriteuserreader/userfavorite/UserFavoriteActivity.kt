@@ -1,10 +1,9 @@
 package com.udhipe.favoriteuserreader.userfavorite
 
-import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.MenuItem
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +12,6 @@ import com.udhipe.favoriteuserreader.app.FavUserApplication
 import com.udhipe.favoriteuserreader.data.User
 import com.udhipe.favoriteuserreader.databinding.ActivityUserFavoriteBinding
 import com.udhipe.favoriteuserreader.sharedadapter.UserAdapter
-import com.udhipe.favoriteuserreader.userdetail.UserDetailActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
@@ -41,7 +39,11 @@ class UserFavoriteActivity : AppCompatActivity() {
         binding = ActivityUserFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.rvGithubUser.visibility = View.GONE
+        binding.shimmerScreen.visibility = View.VISIBLE
+        binding.shimmerScreen.startShimmer()
+
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = getString(R.string.favorite_user)
 
         binding.rvGithubUser.setHasFixedSize(true)
@@ -83,8 +85,9 @@ class UserFavoriteActivity : AppCompatActivity() {
                         val followers = getInt(getColumnIndexOrThrow("followers"))
                         val following = getInt(getColumnIndexOrThrow("following"))
                         val avatar = getString(getColumnIndexOrThrow("avatar"))
+                        val isFavorite = getInt(getColumnIndexOrThrow("isFavorite"))
 
-                        val user = User(username, name, location, repository, company, followers, following, avatar)
+                        val user = User(username, name, location, repository, company, followers, following, avatar, isFavorite)
 
                         favoriteUserList.add(user)
 
@@ -100,34 +103,38 @@ class UserFavoriteActivity : AppCompatActivity() {
             val result = deferredUser.await()
             Log.d("FAVUSSERR", "after get deferredUser = " + favoriteUserList.toString())
             userAdapter.setData(favoriteUserList)
+
+            binding.shimmerScreen.stopShimmer()
+            binding.shimmerScreen.visibility = View.GONE
+            binding.rvGithubUser.visibility = View.VISIBLE
         }
 
         Log.d("FAVUSSERR", "after async = " + favoriteUserList.toString())
     }
 
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                finish()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-
-    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return when (item.itemId) {
+//            android.R.id.home -> {
+//                finish()
+//                true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//
+//    }
 
     private fun setAdapter() {
-        val onItemCallBack = object : UserAdapter.OnItemClickCallback {
-            override fun onItemClick(userName: String) {
-                val intent = Intent(this@UserFavoriteActivity, UserDetailActivity::class.java)
-                intent.putExtra(USERNAME, userName)
-                startActivity(intent)
-            }
-        }
+//        val onItemCallBack = object : UserAdapter.OnItemClickCallback {
+//            override fun onItemClick(userName: String) {
+//                val intent = Intent(this@UserFavoriteActivity, UserDetailActivity::class.java)
+//                intent.putExtra(USERNAME, userName)
+//                startActivity(intent)
+//            }
+//        }
 
         binding.rvGithubUser.layoutManager = LinearLayoutManager(this)
-        userAdapter = UserAdapter(onItemCallBack)
+        userAdapter = UserAdapter()
         binding.rvGithubUser.adapter = userAdapter
     }
 }
