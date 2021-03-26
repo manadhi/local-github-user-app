@@ -15,21 +15,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c48bf55e-4348-49bc-8d68-9bf95b9ea025" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/app/GithExApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/app/GithExApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/User.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favoriteuserreader/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/data/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/data/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/sharedadapter/UserAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userdetail/FollowFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userdetail/FollowFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userfavorite/UserFavoriteActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/java/com/udhipe/favoriteuserreader/userfavorite/UserFavoriteActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout/activity_user_favorite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/favoriteuserreader/src/main/res/layout/activity_user_favorite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/data/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/provider/UserProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/provider/UserProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/setting/SettingFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/setting/SettingFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userdetail/UserDetailViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userfavorite/UserFavoriteViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userlist/UserListActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userlist/UserListActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userlist/UserViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/userlist/UserViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/udhipe/githubuserex/widget/FavoriteUserService.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_2_API_29]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[1a1e0d710403]" />
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
   </component>
@@ -318,10 +326,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="328" y="154" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1280.777@0.23.1280.777" timestamp="1613257028303" />
-    <state x="378" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614582419295">
+    <state x="378" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616732299133">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="378" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.777@0.23.1280.777" timestamp="1614582419295" />
+    <state x="378" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1280.777@0.23.1280.777" timestamp="1616732299133" />
     <state x="374" y="210" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1614742923627">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -382,10 +390,6 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state width="1236" height="266" key="GridCell.Tab.1.right/0.23.1280.777@0.23.1280.777" timestamp="1615083702301" />
-    <state x="228" y="161" key="IDE.errors.dialog" timestamp="1607734541660">
-      <screen x="0" y="23" width="1280" height="777" />
-    </state>
-    <state x="228" y="161" key="IDE.errors.dialog/0.23.1280.777@0.23.1280.777" timestamp="1607734541660" />
     <state x="0" y="23" width="1280" height="777" key="SettingsEditor" timestamp="1615417748849">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -410,10 +414,6 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="0" y="23" width="721" height="777" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1614581011489" />
-    <state x="189" y="161" key="psd.add.library.dependency.panel.dimension" timestamp="1607995523914">
-      <screen x="0" y="23" width="1280" height="777" />
-    </state>
-    <state x="189" y="161" key="psd.add.library.dependency.panel.dimension/0.23.1280.777@0.23.1280.777" timestamp="1607995523914" />
     <state x="305" y="186" width="670" height="675" key="run.anything.popup" timestamp="1614582052890">
       <screen x="0" y="23" width="1280" height="777" />
     </state>

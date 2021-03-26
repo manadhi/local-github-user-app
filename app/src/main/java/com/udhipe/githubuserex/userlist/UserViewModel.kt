@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.udhipe.githubuserex.data.User
 import com.udhipe.githubuserex.data.UserRepository
-import com.udhipe.githubuserex.network.NetworkService
 
 class UserViewModel(
     private val repository: UserRepository
@@ -18,10 +17,6 @@ class UserViewModel(
         const val DATA_EXIST = "data exist"
     }
 
-    private val mEmptyBody = "empty body"
-    private val mNotSuccess = "not success"
-
-    private val mUserService = NetworkService.getNetworkService()
     private val mUserList = MutableLiveData<ArrayList<User>>()
     private val mUserListInfo = MutableLiveData<String>()
     private val mUserDetailInfo = MutableLiveData<String>()

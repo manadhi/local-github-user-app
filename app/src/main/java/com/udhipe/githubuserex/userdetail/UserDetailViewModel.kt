@@ -3,8 +3,6 @@ package com.udhipe.githubuserex.userdetail
 import androidx.lifecycle.*
 import com.udhipe.githubuserex.data.User
 import com.udhipe.githubuserex.data.UserRepository
-import com.udhipe.githubuserex.network.NetworkService
-import com.udhipe.githubuserex.userlist.UserViewModel
 import kotlinx.coroutines.launch
 
 class UserDetailViewModel(private val repository: UserRepository) : ViewModel() {
@@ -18,9 +16,7 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
     }
 
     private val mEmptyBody = "empty body"
-    private val mNotSuccess = "not success"
 
-    private val mUserService = NetworkService.getNetworkService()
     private val mFollowerList = MutableLiveData<ArrayList<User>>()
     private val mFollowingList = MutableLiveData<ArrayList<User>>()
     private val mUserDetail = MutableLiveData<User>()
@@ -61,14 +57,14 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
             }
 
             override fun onError(message: String) {
-                if (message.equals("empty body", true)) {
+                if (message.equals(mEmptyBody, true)) {
                     mUserDetailInfo.postValue(DATA_EMPTY)
                 } else {
                     mUserDetailInfo.postValue(message)
                 }
             }
 
-        });
+        })
     }
 
     /** --------------------------------------------------------------------- */
@@ -83,12 +79,12 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
             object : UserRepository.Listener<ArrayList<User>> {
                 override fun onSuccess(data: ArrayList<User>, message: String) {
                     mFollowerList.postValue(data)
-                    mFollowerInfo.postValue(UserViewModel.DATA_EXIST)
+                    mFollowerInfo.postValue(DATA_EXIST)
                 }
 
                 override fun onError(message: String) {
                     if (message.equals("empty data", true)) {
-                        mFollowerInfo.postValue(UserViewModel.DATA_EMPTY)
+                        mFollowerInfo.postValue(DATA_EMPTY)
                     } else {
                         mFollowerInfo.postValue(message)
                     }
@@ -102,12 +98,12 @@ class UserDetailViewModel(private val repository: UserRepository) : ViewModel() 
             object : UserRepository.Listener<ArrayList<User>> {
                 override fun onSuccess(data: ArrayList<User>, message: String) {
                     mFollowingList.postValue(data)
-                    mFollowingInfo.postValue(UserViewModel.DATA_EXIST)
+                    mFollowingInfo.postValue(DATA_EXIST)
                 }
 
                 override fun onError(message: String) {
                     if (message.equals("empty data", true)) {
-                        mFollowingInfo.postValue(UserViewModel.DATA_EMPTY)
+                        mFollowingInfo.postValue(DATA_EMPTY)
                     } else {
                         mFollowingInfo.postValue(message)
                     }

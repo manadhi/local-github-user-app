@@ -35,8 +35,6 @@ class UserListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityUserListBinding
     private lateinit var userAdapter: UserAdapter
 
-//    private lateinit var userViewModel: UserViewModel
-
     companion object {
         const val USERNAME = "userName"
     }
@@ -48,20 +46,15 @@ class UserListActivity : AppCompatActivity() {
 
         binding.rvGithubUser.setHasFixedSize(true)
 
-//        userViewModel = ViewModelProvider(
-//            this,
-//            ViewModelProvider.NewInstanceFactory()
-//        ).get(UserViewModel::class.java)
-
         setAdapter()
 
-        userViewModel.getUserList(UserViewModel.USER_LIST)?.observe(this, {
+        userViewModel.getUserList(UserViewModel.USER_LIST)?.observe(this@UserListActivity, {
             if (it != null) {
                 userAdapter.setData(it)
             }
         })
 
-        userViewModel.getInfo(UserViewModel.USER_LIST).observe(this, {
+        userViewModel.getInfo(UserViewModel.USER_LIST).observe(this@UserListActivity, {
             when (it) {
                 null, "", UserViewModel.DATA_EXIST -> binding.tvInfo.visibility = View.GONE
 
@@ -70,7 +63,7 @@ class UserListActivity : AppCompatActivity() {
                     binding.tvInfo.text = getString(R.string.can_not_find_user)
                 }
 
-                else -> Toast.makeText(this, getString(R.string.something_is_wrong), Toast.LENGTH_SHORT).show()
+                else -> Toast.makeText(this@UserListActivity, getString(R.string.something_is_wrong), Toast.LENGTH_SHORT).show()
             }
 
             binding.shimmerScreen.stopShimmer()
@@ -83,7 +76,7 @@ class UserListActivity : AppCompatActivity() {
     }
 
     private fun setListener() {
-        userViewModel.getKeyWord().observe(this, {
+        userViewModel.getKeyWord().observe(this@UserListActivity, {
             if (it != null) {
                 binding.searchView.setQuery(it, false)
             }
@@ -126,18 +119,17 @@ class UserListActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.license -> {
                 OssLicensesMenuActivity.setActivityTitle(getString(R.string.license))
-                startActivity(Intent(this, OssLicensesMenuActivity::class.java))
+                startActivity(Intent(this@UserListActivity, OssLicensesMenuActivity::class.java))
                 true
             }
 
             R.id.about -> {
-                startActivity(Intent(this, AboutAppActivity::class.java))
+                startActivity(Intent(this@UserListActivity, AboutAppActivity::class.java))
                 true
             }
 
             R.id.setting -> {
-                startActivity(Intent(this, SettingActivity::class.java))
-//                startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+                startActivity(Intent(this@UserListActivity, SettingActivity::class.java))
                 true
             }
 
@@ -159,7 +151,7 @@ class UserListActivity : AppCompatActivity() {
             }
         }
 
-        binding.rvGithubUser.layoutManager = LinearLayoutManager(this)
+        binding.rvGithubUser.layoutManager = LinearLayoutManager(this@UserListActivity)
         userAdapter = UserAdapter(onItemCallBack)
         binding.rvGithubUser.adapter = userAdapter
     }

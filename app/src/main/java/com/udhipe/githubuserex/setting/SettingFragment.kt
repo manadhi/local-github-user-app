@@ -73,10 +73,6 @@ class SettingFragment : PreferenceFragmentCompat(),
 
             val reminderReciever = ReminderReceiver()
             if (sharedPreference.getBoolean(mREMINDER, true)) {
-                // test
-//                val sdf = SimpleDateFormat("HH:mm")
-//                val current = Calendar.getInstance()
-//                var time = sdf.format(current.time)
 
                 val time = "09:00"
                 context?.let { reminderReciever.setReminder(it, time, "reminder") }

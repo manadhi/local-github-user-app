@@ -4,8 +4,6 @@ import android.app.Application
 import com.udhipe.githubuserex.data.UserDatabase
 import com.udhipe.githubuserex.data.UserRepository
 import com.udhipe.githubuserex.network.NetworkService
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
 
 class GithExApplication : Application() {
     private val database by lazy { UserDatabase.getDatabase(this) }

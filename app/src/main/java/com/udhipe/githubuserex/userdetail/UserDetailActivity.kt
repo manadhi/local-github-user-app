@@ -12,7 +12,6 @@ import com.udhipe.githubuserex.app.GithExApplication
 import com.udhipe.githubuserex.data.User
 import com.udhipe.githubuserex.databinding.ActivityUserDetailBinding
 import com.udhipe.githubuserex.userlist.UserListActivity
-import com.udhipe.githubuserex.userlist.UserViewModel
 
 class UserDetailActivity : AppCompatActivity() {
 
@@ -56,10 +55,10 @@ class UserDetailActivity : AppCompatActivity() {
 
         viewModel.getInfo(UserDetailViewModel.USER_DETAIL).observe(this, {
             when (it) {
-                UserViewModel.DATA_EXIST -> {
+                UserDetailViewModel.DATA_EXIST -> {
                 }
 
-                null, "", UserViewModel.DATA_EMPTY -> Toast.makeText(
+                null, "", UserDetailViewModel.DATA_EMPTY -> Toast.makeText(
                     this,
                     getString(R.string.can_not_find_user_detail),
                     Toast.LENGTH_SHORT
@@ -90,10 +89,8 @@ class UserDetailActivity : AppCompatActivity() {
 
             if (it) {
                 binding.btnFavorite.setIconTintResource(R.color.red)
-//                binding.btnFavorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite_red)
             } else {
                 binding.btnFavorite.setIconTintResource(R.color.white)
-//                binding.btnFavorite.icon = ContextCompat.getDrawable(this, R.drawable.ic_favorite)
             }
         })
 

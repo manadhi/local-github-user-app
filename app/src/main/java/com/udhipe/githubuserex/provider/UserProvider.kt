@@ -15,19 +15,13 @@ class UserProvider : ContentProvider() {
         // Defines the database name
         private const val DBNAME = "user_database"
 
-        val AUTHORITY = "com.udhipe.githubuserex.provider"
-        private val USER_TABLE = "user_table"
-        val CONTENT_URI: Uri = Uri.parse("content://" + AUTHORITY + "/" + USER_TABLE)
+        private const val AUTHORITY = "com.udhipe.githubuserex.provider"
+        private const val USER_TABLE = "user_table"
 
-        private val USER = 1
-        private val USER_ID = 2
+        private const val USER = 1
+        private const val USER_ID = 2
 
         private val mURIMatcher = UriMatcher(UriMatcher.NO_MATCH)
-
-//        val CONTENT_URI: Uri = Uri.Builder().scheme(SCHEME)
-//            .authority(AUTHORITY)
-//            .appendPath(TABLE_NAME)
-//            .build()
 
         init {
             mURIMatcher.addURI(AUTHORITY, USER_TABLE, USER)

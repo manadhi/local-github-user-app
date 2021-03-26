@@ -1,6 +1,5 @@
 package com.udhipe.githubuserex.data
 
-import android.database.Cursor
 import androidx.annotation.WorkerThread
 import com.udhipe.githubuserex.network.UserService
 import kotlinx.coroutines.flow.Flow
@@ -17,22 +16,10 @@ class UserRepository(private val userDao: UserDao, private val networkService: U
         fun onError(message: String)
     }
 
-    // web service
-    lateinit var listUserByUsername: ArrayList<User>
-    lateinit var listUserInfo: String
-
     private val mSuccess = "success"
     private val mEmptyData = "empty data"
     private val mEmptyBody = "empty body"
     private val mNotSuccess = "not success"
-
-    // test content provider
-    @WorkerThread
-    suspend fun getAllUser(): Cursor {
-        return userDao.getAllList()
-    }
-
-//    val listUserForWidget: List<User> = userDao.getUserListAscendingWidget()
 
     @WorkerThread
     suspend fun addUser(user: User) {

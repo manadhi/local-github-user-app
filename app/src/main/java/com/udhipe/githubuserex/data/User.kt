@@ -31,7 +31,6 @@ data class User(
     val avatar: String,
 
     // for decide this user is favorite user or not
-    // this value can be change from ui
     // default value is false = not favorite user
     var isFavorite: Int
 )
