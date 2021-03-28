@@ -32,11 +32,6 @@ class UserRepository(private val userDao: UserDao, private val networkService: U
     }
 
     @WorkerThread
-    suspend fun deleteAllUser() {
-        userDao.deleteAllUser()
-    }
-
-    @WorkerThread
     suspend fun getOneUser(userName: String): User? {
         return userDao.getUserByUserName(userName)
     }

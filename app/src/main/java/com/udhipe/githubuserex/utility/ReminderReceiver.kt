@@ -26,23 +26,20 @@ class ReminderReceiver : BroadcastReceiver() {
 
         private const val ID_REMINDER = 100
         private const val TIME_FORMAT = "HH:mm"
-
+        private const val TITLE = R.string.app_name
     }
 
     override fun onReceive(context: Context, intent: Intent) {
         // This method is called when the BroadcastReceiver is receiving an Intent broadcast.
 
         val message = intent.getStringExtra(EXTRA_MESSAGE) ?: "-"
-        val notifId = ID_REMINDER
 
-        showNotificationReminder(context, "Github Explorer", message, notifId)
+        showNotificationReminder(context, message)
     }
 
     private fun showNotificationReminder(
         context: Context,
-        title: String,
-        message: String,
-        notifId: Int
+        message: String
     ) {
         val channelId = "reminder_1"
         val channelName = "reminder channel"
@@ -53,7 +50,6 @@ class ReminderReceiver : BroadcastReceiver() {
         val resultPendingIntent: PendingIntent? = TaskStackBuilder.create(context).run {
             // Add the intent, which inflates the back stack
             addNextIntent(resultIntent)
-//            addNextIntentWithParentStack(resultIntent)
             // Get the PendingIntent containing the entire back stack
             getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT)
         }
@@ -63,7 +59,7 @@ class ReminderReceiver : BroadcastReceiver() {
         val notifSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val builder = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.drawable.ic_alarm)
-            .setContentTitle(title)
+            .setContentTitle(TITLE.toString())
             .setContentText(message)
             .setSound(notifSound)
             .setContentIntent(resultPendingIntent)
@@ -80,7 +76,7 @@ class ReminderReceiver : BroadcastReceiver() {
         }
 
         val notification = builder.build()
-        notificationManagerCompat.notify(notifId, notification)
+        notificationManagerCompat.notify(ID_REMINDER, notification)
     }
 
     fun cancelReminder(context: Context) {
@@ -92,13 +88,12 @@ class ReminderReceiver : BroadcastReceiver() {
 
         alarmManager.cancel(pendingIntent)
 
-        Toast.makeText(context, "Reminder dibatalkan", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.cancel_reminder), Toast.LENGTH_SHORT).show()
     }
 
     fun setReminder(context: Context, time: String, message: String) {
 
-        // Validasi inputan waktu terlebih dahulu
-        if (isDateInvalid(time, TIME_FORMAT)) return
+        if (isDateInvalid(time)) return
 
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, ReminderReceiver::class.java)
@@ -119,13 +114,13 @@ class ReminderReceiver : BroadcastReceiver() {
             pendingIntent
         )
 
-        Toast.makeText(context, "Reminder berhasil diset", Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, context.getString(R.string.set_reminder), Toast.LENGTH_SHORT).show()
     }
 
-    // Metode ini digunakan untuk validasi date dan time
-    private fun isDateInvalid(date: String, format: String): Boolean {
+    // time validation
+    private fun isDateInvalid(date: String): Boolean {
         return try {
-            val df = SimpleDateFormat(format, Locale.getDefault())
+            val df = SimpleDateFormat(TIME_FORMAT, Locale.getDefault())
             df.isLenient = false
             df.parse(date)
             false

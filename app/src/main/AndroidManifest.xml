@@ -17,17 +17,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_app_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GithubUserExplorer">
+        android:theme="@style/Theme.GithubUserExplorer"
+        android:fullBackupContent="true">
 
         <provider
             android:name=".provider.UserProvider"
+            android:permission="android.permission.INSTALL_PACKAGES"
             android:authorities="com.udhipe.githubuserex.provider"
             android:enabled="true"
             android:exported="true" />
-        
+
         <receiver
             android:name=".utility.ReminderReceiver"
             android:enabled="true"
+            android:permission="android.permission.INSTALL_PACKAGES"
             android:exported="true" />
 
         <activity android:name=".setting.SettingActivity" />
