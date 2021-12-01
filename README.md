@@ -2,13 +2,13 @@
 Android application using local data to show several github user.
 
 change branch to see several different variant:
-+   master
++   master : 
     application build not using MVVM and just local/ dummy data
 
-+   mvvm-network
++   mvvm-network : 
     application build using MVVM pattern and use data from github api
 
-+   mvvm-room-provider
++   mvvm-room-provider : 
     application build using MVVM pattern, room for saving data from api to local, and content provider to share local data for other application
 
 +   room-contentprovider (used for backup)
